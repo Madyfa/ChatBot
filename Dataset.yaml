@@ -1,0 +1,20 @@
+# requestGPA intent
+---
+type: intent
+name: requestGPA
+slots:
+   - name: gpa
+     entity: gpa
+utterances:
+   - what is my [gpa]?
+   - give me my [gpa] please
+   - i want to know my [gpa]
+   - could you tell me my [gpa]?
+
+# gpa entity
+---
+type: entity
+name: gpa
+automatically_extensible: no
+values:
+- [gpa, marks, grades]
