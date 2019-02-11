@@ -1,0 +1,82 @@
+{
+  "entities": {
+    "gpa": {
+      "automatically_extensible": false,
+      "data": [
+        {
+          "synonyms": [
+            "marks",
+            "grades"
+          ],
+          "value": "gpa"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    }
+  },
+  "intents": {
+    "requestGPA": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "what is my "
+            },
+            {
+              "entity": "gpa",
+              "slot_name": "gpa",
+              "text": "gpa"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "give me my "
+            },
+            {
+              "entity": "gpa",
+              "slot_name": "gpa",
+              "text": "marks"
+            },
+            {
+              "text": " please"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "i want to know my "
+            },
+            {
+              "entity": "gpa",
+              "slot_name": "gpa",
+              "text": "grades"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "could you tell me my "
+            },
+            {
+              "entity": "gpa",
+              "slot_name": "gpa",
+              "text": "gpa"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "language": "en"
+}
