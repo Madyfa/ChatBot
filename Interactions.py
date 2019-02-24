@@ -61,7 +61,7 @@ class intent :
         except Exception as e:
             print("Error ",e)
 
-class slots():
+class slots:
 
 
     def __init__(self,conn):

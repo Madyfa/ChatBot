@@ -5,6 +5,8 @@ name: requestGPA
 slots:
    - name: gpa
      entity: gpa
+   - name: ID
+     entity: snips/number
 utterances:
    - what is my [gpa]?
    - give me my [gpa] please
