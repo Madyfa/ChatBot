@@ -1,0 +1,256 @@
+{
+  "entities": {
+    "Exam": {
+      "automatically_extensible": false,
+      "data": [
+        {
+          "synonyms": [
+            "examination",
+            "test"
+          ],
+          "value": "Exam"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "Timetable": {
+      "automatically_extensible": true,
+      "data": [],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "classLoc": {
+      "automatically_extensible": true,
+      "data": [],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "type": {
+      "automatically_extensible": false,
+      "data": [
+        {
+          "synonyms": [
+            "practical",
+            "final",
+            "midterm"
+          ],
+          "value": "oral"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    }
+  },
+  "intents": {
+    "ClassLocation": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "where is "
+            },
+            {
+              "entity": "classLoc",
+              "slot_name": "classLoc",
+              "text": "sw lab"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "how to find "
+            },
+            {
+              "entity": "classLoc",
+              "slot_name": "classLoc",
+              "text": "sw lab"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "i need to go to "
+            },
+            {
+              "entity": "classLoc",
+              "slot_name": "classLoc",
+              "text": "sw lab"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "could you tell me the location of "
+            },
+            {
+              "entity": "classLoc",
+              "slot_name": "classLoc",
+              "text": "sw lab"
+            }
+          ]
+        }
+      ]
+    },
+    "ExamsSchedule": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "When are the "
+            },
+            {
+              "entity": "Exam",
+              "slot_name": "Exam",
+              "text": "exam"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "When are the "
+            },
+            {
+              "entity": "type",
+              "slot_name": "type",
+              "text": "final"
+            },
+            {
+              "text": "and"
+            },
+            {
+              "entity": "Exam",
+              "slot_name": "Exam",
+              "text": "Exam"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What is the "
+            },
+            {
+              "entity": "Exam",
+              "slot_name": "Exam",
+              "text": "examination"
+            },
+            {
+              "text": "and"
+            },
+            {
+              "entity": "Timetable",
+              "slot_name": "Timetable",
+              "text": "first"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What is the "
+            },
+            {
+              "entity": "type",
+              "slot_name": "type",
+              "text": "oral"
+            },
+            {
+              "text": "and"
+            },
+            {
+              "entity": "Exam",
+              "slot_name": "Exam",
+              "text": "test"
+            },
+            {
+              "text": "and"
+            },
+            {
+              "entity": "Timetable",
+              "slot_name": "Timetable",
+              "text": "first"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "my "
+            },
+            {
+              "entity": "Exam",
+              "slot_name": "Exam",
+              "text": "exam"
+            },
+            {
+              "text": "and"
+            },
+            {
+              "entity": "Timetable",
+              "slot_name": "Timetable",
+              "text": "first"
+            },
+            {
+              "text": " please?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "my "
+            },
+            {
+              "entity": "type",
+              "slot_name": "type",
+              "text": "practical"
+            },
+            {
+              "text": "&"
+            },
+            {
+              "entity": "Exam",
+              "slot_name": "Exam",
+              "text": "Exam"
+            },
+            {
+              "text": "&"
+            },
+            {
+              "entity": "Timetable",
+              "slot_name": "Timetable",
+              "text": "first"
+            },
+            {
+              "text": " please?"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "language": "en"
+}

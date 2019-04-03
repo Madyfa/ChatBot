@@ -1,22 +1,57 @@
-# requestGPA intent
+
+# ClassLocation intent
 ---
 type: intent
-name: requestGPA
+name: ClassLocation
 slots:
-   - name: gpa
-     entity: gpa
-   - name: ID
-     entity: snips/number
+   - name: classLoc
+     entity: classLoc
 utterances:
-   - what is my [gpa]?
-   - give me my [gpa] please
-   - i want to know my [gpa]
-   - could you tell me my [gpa]?
+    - where is [classLoc](sw lab)?
+    - how to find [classLoc]?
+    - i need to go to [classLoc]
+    - could you tell me the location of [classLoc]
 
-# gpa entity
+# ExamsSchedule intent
+---
+type: intent
+name: ExamsSchedule
+slots:
+   - name: Exam
+     entity: Exam
+   - name: Timetable
+     entity: Timetable
+   - name: type
+     entity: type
+utterances:
+    - When are the [Exam](exam)?
+    - When are the [type](final)and[Exam]?
+    - What is the [Exam]and[Timetable](first)?
+    - What is the [type]and[Exam]and[Timetable]?
+    - my [Exam]and[Timetable] please?
+    - my [type]&[Exam]&[Timetable] please?
+
+# classLoc entity
 ---
 type: entity
-name: gpa
+name: classLoc
 automatically_extensible: no
 values:
-- [gpa, marks, grades]
+- [SW Lab, CS Lab, IS Lab]
+
+
+#Exam entity
+type: entity
+name: Exam
+automatically_extensible: no
+values:
+    - [Exam, examination, test]
+
+---
+# type entity
+type: entity
+name: type
+automatically_extensible: no
+values:
+   - [oral, practical, final, midterm]
+
