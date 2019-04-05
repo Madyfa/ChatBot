@@ -71,20 +71,20 @@ class NLU:
         else:
             return True
 
-    def checkSlot(self):
-        dbSlots = self.__interaction.SlotFactory().GetIntentSlot(self._getIntent())
-        nluSlots = self._getSlots()
-        #dbSlots = ['gpa', 'ID', 'Department']
-        ret = []
-
-        for i in range(len(dbSlots)):
-            for j in nluSlots:
-                if dbSlots[i] == j:
-                    break
-                else:
-                    ret.append(dbSlots[i])
-
-        return ret
+    # def checkSlot(self):
+    #     dbSlots = self.__interaction.SlotFactory().GetIntentSlot(self._getIntent())
+    #     nluSlots = self._getSlots()
+    #     #dbSlots = ['gpa', 'ID', 'Department']
+    #     ret = []
+    #
+    #     for i in range(len(dbSlots)):
+    #         for j in nluSlots:
+    #             if dbSlots[i] == j:
+    #                 break
+    #             else:
+    #                 ret.append(dbSlots[i])
+    #
+    #     return ret
 
     def answer(self):
         slots = self.checkSlot()
@@ -100,3 +100,68 @@ class NLU:
         else:
             print('not available due to intent')
 
+    def checkSlots(self):
+        datasetSlots = []
+        print(self._getIntent())
+        for i in range(len(dataset['intents'][self._getIntent()]['utterances'])):
+            for j in range(len(dataset['intents'][self._getIntent()]['utterances'][i]['data'])):
+                check = json.dumps(dataset['intents'][self._getIntent()]['utterances'][i]['data'][j])
+                if 'entity' in check:
+                    datasetSlots.append(dataset['intents'][self._getIntent()]['utterances'][i]['data'][j]['entity'])
+                    datasetSlots = list(dict.fromkeys(datasetSlots))
+        for x in datasetSlots:
+            if 'Val' in x:
+                datasetSlots.remove(x)
+        nluSlots = self._getSlots()
+        ret = []
+        for i in range(len(datasetSlots)):
+            found = False
+            for j in nluSlots.keys():
+                if datasetSlots[i] == j:
+                    found = True
+                    break
+            if not found:
+                ret.append(datasetSlots[i])
+        print("Slots Not Available in Question : ", ret)  # el mafroud btalla3 el slots ely el mafroud tb2a mwgooda
+        return ret
+
+    def askForunenteredEntities(self):
+        slots_needed = self._getSlots()
+        print(slots_needed)
+        slots_missing = self.checkSlots()
+        loopflagi = True
+        # print(temp3[1]);
+        for i in range(len(slots_missing)):
+            loopflagi = False
+            while not loopflagi:
+                print("Chatbot: Please Enter", slots_missing[i])
+                reply = raw_input("User: ")
+                if reply == 'q':
+                    break
+                for j in range(len(dataset['entities'][slots_missing[i]])):
+                    try:
+                        check = json.dumps(dataset['entities'][slots_missing[i]]['data'][j])
+                    except:
+                        continue
+                    if reply in check:
+                        # e3ml 7aga
+                        slots_needed[slots_missing[i]] = reply
+                        loopflagi = True
+                        break
+        return slots_needed
+
+    def return_original(self):
+        slots_needed = self.askForunenteredEntities()
+        key_list = list(slots_needed.keys())
+        finaldic = dict()
+        for key in range(len(key_list)):
+            # print(key_list[key] + "here")
+            # print(slots_needed[key_list[key]])
+            # do something
+            for i in range(len(dataset['entities'][key_list[key]]["data"])):
+                check = json.dumps(dataset['entities'][key_list[key]]["data"][i])
+                if slots_needed[key_list[key]] in check:
+                    finaldic[key_list[key]] = dataset['entities'][key_list[key]]["data"][i]["value"]
+                    # print(dataset['entities'][key_list[key]]["data"][i]["value"])
+        print(finaldic)  # original values of entities used in question
+        # return List or dictionary??
