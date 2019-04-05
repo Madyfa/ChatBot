@@ -1,3 +1,91 @@
+# requestGPA intent
+---
+type: intent
+name: requestGPA
+slots:
+   - name: gpa
+     entity: gpa
+
+   - name: ID
+     entity: snips/number
+
+utterances:
+   - what is my [gpa](gpa) ?
+   - give me my [gpa] please
+   - i want to know my [gpa]
+   - could you tell me my [gpa]?
+
+# NA intent
+---
+type: intent
+name: NA
+utterances:
+  - What is my rank among my colleagues?
+  - What are the electives this semester?
+  - Can i submit assignment online?
+  - What is the timetable of seminar ?
+  - Can i postponed an exam?
+
+# ReqSchedule intent
+---
+type: intent
+name: ReqSchedule
+slots:
+  - name: Schedule
+    entity: TimetableVal
+
+  - name: dept
+    entity: Department
+
+  - name: yr
+    entity: Year
+utterances:
+  - What is the [Schedule](Schedule) for [dept](software engineering) in [yr](year 1) ?
+  - where is my course's [Schedule]?
+  - What's my [Schedule] for this term?
+  - when does [Schedule] start?
+  - In which lecture [Schedule] does my next lecture take place?
+  - At what [Schedule] is my next lecture?
+  - What is the [Schedule] for [yr] and [dept]?
+  - What is the lab where os [Schedule] is given?
+  - Who teaches compilers [Schedule] for section 15?
+  - who are my doctors/TA for [Schedule]?
+
+# Service intent
+---
+type: intent
+name: Service
+slots:
+ - name: service
+   entity: ServiceType
+utterances:
+- where is the college's [service](buffet) ?
+
+# Papers intent
+---
+type: intent
+name: Papers
+slots:
+ - name : paper
+   entity : DocumentVal
+ - name: type
+   entity: PaperType
+utterances:
+- What are the [paper](paper) needed for [type](submission)?
+- How can i get a [type]?
+
+# ReqCourseDescription intent
+---
+type: intent
+name: ReqCourseDescription
+slots:
+ - name: course
+   entity: CourseDescriptionVal
+ - name: name
+   entity: CourseName
+utterances:
+- I want [course](course information) about [name](operating system)
+- What do i learn in each [course] ?
 
 # ClassLocation intent
 ---
@@ -20,7 +108,7 @@ slots:
    - name: Exam
      entity: Exam
    - name: Timetable
-     entity: Timetable
+     entity: TimetableVal
    - name: type
      entity: type
 utterances:
@@ -41,17 +129,107 @@ values:
 
 
 #Exam entity
+---
 type: entity
 name: Exam
 automatically_extensible: no
 values:
     - [Exam, examination, test]
 
----
+
 # type entity
+---
 type: entity
 name: type
 automatically_extensible: no
 values:
    - [oral, practical, final, midterm]
 
+# CourseDescriptionVal entity
+---
+type: entity
+name: CourseDescriptionVal
+automatically_extensible: yes
+values:
+- [course information, course description, course details ,course]
+
+# CourseName entity
+---
+type: entity
+name: CourseName
+automatically_extensible: yes
+values:
+- operating system
+
+
+# DocumentVal entity
+---
+type: entity
+name : DocumentVal
+automatically_extensible: yes
+values:
+- [paper , papers]
+
+# PaperType entity
+---
+type: entity
+name: PaperType
+automatically_extensible: yes
+values:
+- [submission, admission]
+- certificate of registration
+
+# ServiceType entity
+---
+type: entity
+name: ServiceType
+automatically_extensible: yes
+values:
+- buffet
+- [technician, it]
+
+# Year entity
+---
+type: entity
+name: Year
+values:
+- [first year, 1st year, year one, year 1]
+- [second year , 2nd year , year second , year 2]
+- [third year , 3rd year , year third , year 3]
+- [fourth year , 4th year , year fourth , year 4 , senior, final year]
+
+# Department entity
+---
+type: entity
+name: Department
+automatically_extensible: yes
+values:
+- [software engineering, swe, sw]
+- [bioinformatics, bio]
+- [general, mainstream]
+- [scientific computing, sc]
+- [information system, is]
+- [computer science, cs]
+- [artificial Intelligence, ai]
+- cyber Security
+
+
+# TimetableVal entity
+---
+type: entity
+name: TimetableVal
+automatically_extensible: yes
+values:
+- [timetable, schedule, time]
+- [hall, class location]
+- [course , lecture]
+- course name
+
+
+# gpa entity
+---
+type: entity
+name: gpa
+automatically_extensible: yes
+values:
+- [gpa, marks, grades , result]

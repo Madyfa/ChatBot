@@ -1,5 +1,98 @@
 {
   "entities": {
+    "CourseDescriptionVal": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [
+            "course description",
+            "course details",
+            "course"
+          ],
+          "value": "course information"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "CourseName": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [],
+          "value": "operating system"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "Department": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [
+            "swe",
+            "sw"
+          ],
+          "value": "software engineering"
+        },
+        {
+          "synonyms": [
+            "bio"
+          ],
+          "value": "bioinformatics"
+        },
+        {
+          "synonyms": [
+            "mainstream"
+          ],
+          "value": "general"
+        },
+        {
+          "synonyms": [
+            "sc"
+          ],
+          "value": "scientific computing"
+        },
+        {
+          "synonyms": [
+            "is"
+          ],
+          "value": "information system"
+        },
+        {
+          "synonyms": [
+            "cs"
+          ],
+          "value": "computer science"
+        },
+        {
+          "synonyms": [
+            "ai"
+          ],
+          "value": "artificial Intelligence"
+        },
+        {
+          "synonyms": [],
+          "value": "cyber Security"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "DocumentVal": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [
+            "papers"
+          ],
+          "value": "paper"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
     "Exam": {
       "automatically_extensible": false,
       "data": [
@@ -14,15 +107,137 @@
       "matching_strictness": 1.0,
       "use_synonyms": true
     },
-    "Timetable": {
+    "PaperType": {
       "automatically_extensible": true,
-      "data": [],
+      "data": [
+        {
+          "synonyms": [
+            "admission"
+          ],
+          "value": "submission"
+        },
+        {
+          "synonyms": [],
+          "value": "certificate of registration"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "ServiceType": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [],
+          "value": "buffet"
+        },
+        {
+          "synonyms": [
+            "it"
+          ],
+          "value": "technician"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "TimetableVal": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [
+            "schedule",
+            "time"
+          ],
+          "value": "timetable"
+        },
+        {
+          "synonyms": [
+            "class location"
+          ],
+          "value": "hall"
+        },
+        {
+          "synonyms": [
+            "lecture"
+          ],
+          "value": "course"
+        },
+        {
+          "synonyms": [],
+          "value": "course name"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "Year": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [
+            "1st year",
+            "year one",
+            "year 1"
+          ],
+          "value": "first year"
+        },
+        {
+          "synonyms": [
+            "2nd year",
+            "year second",
+            "year 2"
+          ],
+          "value": "second year"
+        },
+        {
+          "synonyms": [
+            "3rd year",
+            "year third",
+            "year 3"
+          ],
+          "value": "third year"
+        },
+        {
+          "synonyms": [
+            "4th year",
+            "year fourth",
+            "year 4",
+            "senior",
+            "final year"
+          ],
+          "value": "fourth year"
+        }
+      ],
       "matching_strictness": 1.0,
       "use_synonyms": true
     },
     "classLoc": {
+      "automatically_extensible": false,
+      "data": [
+        {
+          "synonyms": [
+            "CS Lab",
+            "IS Lab"
+          ],
+          "value": "SW Lab"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "gpa": {
       "automatically_extensible": true,
-      "data": [],
+      "data": [
+        {
+          "synonyms": [
+            "marks",
+            "grades",
+            "result"
+          ],
+          "value": "gpa"
+        }
+      ],
       "matching_strictness": 1.0,
       "use_synonyms": true
     },
@@ -68,7 +283,7 @@
             {
               "entity": "classLoc",
               "slot_name": "classLoc",
-              "text": "sw lab"
+              "text": "SW Lab"
             },
             {
               "text": "?"
@@ -83,7 +298,7 @@
             {
               "entity": "classLoc",
               "slot_name": "classLoc",
-              "text": "sw lab"
+              "text": "CS Lab"
             }
           ]
         },
@@ -95,7 +310,7 @@
             {
               "entity": "classLoc",
               "slot_name": "classLoc",
-              "text": "sw lab"
+              "text": "IS Lab"
             }
           ]
         }
@@ -155,7 +370,7 @@
               "text": "and"
             },
             {
-              "entity": "Timetable",
+              "entity": "TimetableVal",
               "slot_name": "Timetable",
               "text": "first"
             },
@@ -186,7 +401,7 @@
               "text": "and"
             },
             {
-              "entity": "Timetable",
+              "entity": "TimetableVal",
               "slot_name": "Timetable",
               "text": "first"
             },
@@ -209,9 +424,9 @@
               "text": "and"
             },
             {
-              "entity": "Timetable",
+              "entity": "TimetableVal",
               "slot_name": "Timetable",
-              "text": "first"
+              "text": "timetable"
             },
             {
               "text": " please?"
@@ -240,12 +455,398 @@
               "text": "&"
             },
             {
-              "entity": "Timetable",
+              "entity": "TimetableVal",
               "slot_name": "Timetable",
-              "text": "first"
+              "text": "schedule"
             },
             {
               "text": " please?"
+            }
+          ]
+        }
+      ]
+    },
+    "NA": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "What is my rank among my colleagues?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What are the electives this semester?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Can i submit assignment online?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What is the timetable of seminar ?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Can i postponed an exam?"
+            }
+          ]
+        }
+      ]
+    },
+    "Papers": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "What are the "
+            },
+            {
+              "entity": "DocumentVal",
+              "slot_name": "paper",
+              "text": "paper"
+            },
+            {
+              "text": " needed for "
+            },
+            {
+              "entity": "PaperType",
+              "slot_name": "type",
+              "text": "submission"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "How can i get a "
+            },
+            {
+              "entity": "PaperType",
+              "slot_name": "type",
+              "text": "submission"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        }
+      ]
+    },
+    "ReqCourseDescription": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "I want "
+            },
+            {
+              "entity": "CourseDescriptionVal",
+              "slot_name": "course",
+              "text": "course information"
+            },
+            {
+              "text": " about "
+            },
+            {
+              "entity": "CourseName",
+              "slot_name": "name",
+              "text": "operating system"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What do i learn in each "
+            },
+            {
+              "entity": "CourseDescriptionVal",
+              "slot_name": "course",
+              "text": "course information"
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        }
+      ]
+    },
+    "ReqSchedule": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "What is the "
+            },
+            {
+              "entity": "TimetableVal",
+              "slot_name": "Schedule",
+              "text": "Schedule"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "Department",
+              "slot_name": "dept",
+              "text": "software engineering"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "Year",
+              "slot_name": "yr",
+              "text": "year 1"
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "where is my course's "
+            },
+            {
+              "entity": "TimetableVal",
+              "slot_name": "Schedule",
+              "text": "timetable"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What's my "
+            },
+            {
+              "entity": "TimetableVal",
+              "slot_name": "Schedule",
+              "text": "schedule"
+            },
+            {
+              "text": " for this term?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "when does "
+            },
+            {
+              "entity": "TimetableVal",
+              "slot_name": "Schedule",
+              "text": "time"
+            },
+            {
+              "text": " start?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "In which lecture "
+            },
+            {
+              "entity": "TimetableVal",
+              "slot_name": "Schedule",
+              "text": "hall"
+            },
+            {
+              "text": " does my next lecture take place?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "At what "
+            },
+            {
+              "entity": "TimetableVal",
+              "slot_name": "Schedule",
+              "text": "class location"
+            },
+            {
+              "text": " is my next lecture?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What is the "
+            },
+            {
+              "entity": "TimetableVal",
+              "slot_name": "Schedule",
+              "text": "course"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "Year",
+              "slot_name": "yr",
+              "text": "first year"
+            },
+            {
+              "text": " and "
+            },
+            {
+              "entity": "Department",
+              "slot_name": "dept",
+              "text": "software engineering"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What is the lab where os "
+            },
+            {
+              "entity": "TimetableVal",
+              "slot_name": "Schedule",
+              "text": "lecture"
+            },
+            {
+              "text": " is given?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Who teaches compilers "
+            },
+            {
+              "entity": "TimetableVal",
+              "slot_name": "Schedule",
+              "text": "course name"
+            },
+            {
+              "text": " for section 15?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "who are my doctors/TA for "
+            },
+            {
+              "entity": "TimetableVal",
+              "slot_name": "Schedule",
+              "text": "Schedule"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        }
+      ]
+    },
+    "Service": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "where is the college's "
+            },
+            {
+              "entity": "ServiceType",
+              "slot_name": "service",
+              "text": "buffet"
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        }
+      ]
+    },
+    "requestGPA": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "what is my "
+            },
+            {
+              "entity": "gpa",
+              "slot_name": "gpa",
+              "text": "gpa"
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "give me my "
+            },
+            {
+              "entity": "gpa",
+              "slot_name": "gpa",
+              "text": "gpa"
+            },
+            {
+              "text": " please"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "i want to know my "
+            },
+            {
+              "entity": "gpa",
+              "slot_name": "gpa",
+              "text": "marks"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "could you tell me my "
+            },
+            {
+              "entity": "gpa",
+              "slot_name": "gpa",
+              "text": "grades"
+            },
+            {
+              "text": "?"
             }
           ]
         }
