@@ -28,13 +28,17 @@ class NLU:
         self._probability = 0
         self._slots = {}
 
+    def setQuery(self, query):
+        self.query = query
+        self.excute()
+        x = self.return_original()
 
     def setQuaery(self, query):
         self._query = query
         self.__excute()
 
-    def __excute(self):
-        parsing = engine.parse(self._query)
+    def excute(self):
+        parsing = engine.parse(self.query)
         self.__result = json.loads(json.dumps(parsing))
 
     def _getIntent(self):
@@ -135,7 +139,7 @@ class NLU:
             loopflagi = False
             while not loopflagi:
                 print("Chatbot: Please Enter", slots_missing[i])
-                reply = raw_input("User: ")
+                reply = input("User: ")
                 if reply == 'q':
                     break
                 for j in range(len(dataset['entities'][slots_missing[i]])):

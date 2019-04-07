@@ -118,6 +118,19 @@
       "matching_strictness": 1.0,
       "use_synonyms": true
     },
+    "DoctorBioVal": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [
+            "biography"
+          ],
+          "value": "Biography"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
     "DocumentVal": {
       "automatically_extensible": true,
       "data": [
@@ -416,39 +429,45 @@
         {
           "synonyms": [
             "Dr.Abdelaziz",
-            "Dr. Abdelaziz Abdelhamid"
+            "Dr. Abdelaziz Abdelhamid",
+            "abdelaziz"
           ],
           "value": "Abdelaziz Abdelhamid"
         },
         {
           "synonyms": [
             "Dr.Safwat",
-            "Dr.Safwat Hamad"
+            "Dr.Safwat Hamad",
+            "safwat"
           ],
           "value": "Safwat Hamad"
         },
         {
           "synonyms": [
-            "Dr.Ghada"
+            "Dr.Ghada",
+            "ghada"
           ],
           "value": "Ghada"
         },
         {
           "synonyms": [
-            "Nevine"
+            "Nevine",
+            "nevine"
           ],
           "value": "Dr.Nevine"
         },
         {
           "synonyms": [
-            "Sally"
+            "Sally",
+            "sally"
           ],
           "value": "Dr.Sally"
         },
         {
           "synonyms": [
             "Dr.Rasha",
-            "Dr.Rasha Ismail"
+            "Dr.Rasha Ismail",
+            "rasha"
           ],
           "value": "Rasha Ismail"
         },
@@ -456,7 +475,8 @@
           "synonyms": [
             "Dr.Islam Hegazy",
             "Islam",
-            "Dr.Islam"
+            "Dr.Islam",
+            "islam"
           ],
           "value": "Islam Hegazy"
         },
@@ -464,25 +484,29 @@
           "synonyms": [
             "Mustafa",
             "Dr.Mustapha Aref",
-            "Mustapha"
+            "Mustapha",
+            "mustafa"
           ],
           "value": "Mustafa Aref"
         },
         {
           "synonyms": [
-            "Dr.Khaled Bahnashy"
+            "Dr.Khaled Bahnashy",
+            "khaled"
           ],
           "value": "Khaled Bahnasy"
         },
         {
           "synonyms": [
-            "Bassant"
+            "Bassant",
+            "bassant"
           ],
           "value": "Dr.Bassant"
         },
         {
           "synonyms": [
-            "Dr. Mohammed Youssef"
+            "Dr. Mohammed Youssef",
+            "mohammed youssef"
           ],
           "value": "Mohammed Youssef"
         },
@@ -490,21 +514,27 @@
           "synonyms": [
             "Hamdy",
             "Dr.Hamdy",
-            "Dr. Mohammed Hamdy"
+            "Dr. Mohammed Hamdy",
+            "mohammed hamdy",
+            "hamdy"
           ],
           "value": "Mohammed Hamdy"
         },
         {
           "synonyms": [
             "Dr.Yasmine Afify",
-            "Dr.Yasmine"
+            "Dr.Yasmine",
+            "yasmine afify",
+            "yasmine"
           ],
           "value": "Yasmine Afify"
         },
         {
           "synonyms": [
             "Dr.Manal Tantawy",
-            "Dr.Manal"
+            "Dr.Manal",
+            "manal tantawy",
+            "manal"
           ],
           "value": "Manal Tantawy"
         }
@@ -679,6 +709,98 @@
         }
       ]
     },
+    "DoctorBio": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "What is the "
+            },
+            {
+              "entity": "DoctorBioVal",
+              "slot_name": "Doctorbio",
+              "text": "biography"
+            },
+            {
+              "text": " of "
+            },
+            {
+              "entity": "doctor_name",
+              "slot_name": "doctor_name",
+              "text": "Abdelaziz Abdelhamid"
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Who is "
+            },
+            {
+              "entity": "doctor_name",
+              "slot_name": "doctor_name",
+              "text": "Dr.Abdelaziz"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Who is "
+            },
+            {
+              "entity": "doctor_name",
+              "slot_name": "doctor_name",
+              "text": "Dr. Abdelaziz Abdelhamid"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Tell me more about "
+            },
+            {
+              "entity": "doctor_name",
+              "slot_name": "doctor_name",
+              "text": "abdelaziz"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What is the "
+            },
+            {
+              "entity": "DoctorBioVal",
+              "slot_name": "Doctorbio",
+              "text": "Biography"
+            },
+            {
+              "text": " of "
+            },
+            {
+              "entity": "doctor_name",
+              "slot_name": "doctor_name",
+              "text": "Safwat Hamad"
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        }
+      ]
+    },
     "DoctorOffice": {
       "utterances": [
         {
@@ -692,7 +814,7 @@
               "text": "Dr.Ghada"
             },
             {
-              "text": " personal office?"
+              "text": "'s personal office?"
             }
           ]
         }
@@ -1032,7 +1154,15 @@
               "text": "Prerequisites"
             },
             {
-              "text": " of a certain subject for "
+              "text": " of "
+            },
+            {
+              "entity": "Subjects",
+              "slot_name": "subject",
+              "text": "UI"
+            },
+            {
+              "text": " for "
             },
             {
               "entity": "Department",
@@ -1055,7 +1185,15 @@
               "text": "Prerequesites"
             },
             {
-              "text": " on passing certain subject?"
+              "text": " on passing "
+            },
+            {
+              "entity": "Subjects",
+              "slot_name": "subject",
+              "text": "Web Engineering"
+            },
+            {
+              "text": "?"
             }
           ]
         }

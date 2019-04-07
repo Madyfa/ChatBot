@@ -1,3 +1,21 @@
+# DoctorBio Intent
+---
+type: intent
+name: DoctorBio
+slots:
+   - name: Doctorbio
+     entity: DoctorBioVal
+   - name: Doctor_Name
+     entity: DoctorName
+#   - name: Course
+#     entity: Subjects
+utterances:
+   - What is the [Doctorbio](biography) of [doctor_name] ?
+   - Who is [doctor_name]?
+   - Who is [doctor_name]?
+   - Tell me more about [doctor_name]
+   - What is the [Doctorbio] of [doctor_name] ?
+#   - Information about [Course](UI) [doctor_name] ?
 # Grading Schema Intent
 ---
 type: intent
@@ -19,7 +37,7 @@ slots:
    - name: doc
      entity: doctor_name
 utterances:
-   - where is [doc](Dr.Ghada) personal office?
+   - where is [doc](Dr.Ghada)'s personal office?
 
 
 # OfficeHours Intent
@@ -102,9 +120,11 @@ slots:
       entity: PrerquisitesVal
     - name: dept
       entity: Department
+    - name: subject
+      entity: Subjects
 utterances:
-    - What are the [Prerequisites](Prerequisites) of a certain subject for [dept] (Software Engineering)?
-    - What will be the [Prerequisites] on passing certain subject?
+    - What are the [Prerequisites](Prerequisites) of [subject](UI) for [dept] (Software Engineering)?
+    - What will be the [Prerequisites] on passing [subject]?
 
 
 
@@ -392,20 +412,20 @@ type: entity
 name: doctor_name
 automatically_extensible: yes
 values:
-- [Abdelaziz Abdelhamid, Dr.Abdelaziz, Dr. Abdelaziz Abdelhamid]
-- [Safwat Hamad, Dr.Safwat, Dr.Safwat Hamad]
-- [Ghada, Dr.Ghada]
-- [Dr.Nevine, Nevine]
-- [Dr.Sally, Sally]
-- [Rasha Ismail, Dr.Rasha, Dr.Rasha Ismail]
-- [Islam Hegazy, Dr.Islam Hegazy, Islam, Dr.Islam]
-- [Mustafa Aref, Mustafa, Dr.Mustapha Aref, Mustapha]
-- [Khaled Bahnasy, Dr.Khaled Bahnashy]
-- [Dr.Bassant,Bassant]
-- [Mohammed Youssef, Dr. Mohammed Youssef]
-- [Mohammed Hamdy, Hamdy, Dr.Hamdy, Dr. Mohammed Hamdy]
-- [Yasmine Afify, Dr.Yasmine Afify, Dr.Yasmine]
-- [Manal Tantawy, Dr.Manal Tantawy, Dr.Manal]
+- [Abdelaziz Abdelhamid, Dr.Abdelaziz, Dr. Abdelaziz Abdelhamid,abdelaziz]
+- [Safwat Hamad, Dr.Safwat, Dr.Safwat Hamad, safwat]
+- [Ghada, Dr.Ghada, ghada]
+- [Dr.Nevine, Nevine, nevine]
+- [Dr.Sally, Sally, sally]
+- [Rasha Ismail, Dr.Rasha, Dr.Rasha Ismail, rasha]
+- [Islam Hegazy, Dr.Islam Hegazy, Islam, Dr.Islam, islam]
+- [Mustafa Aref, Mustafa, Dr.Mustapha Aref, Mustapha, mustafa]
+- [Khaled Bahnasy, Dr.Khaled Bahnashy, khaled]
+- [Dr.Bassant,Bassant, bassant]
+- [Mohammed Youssef, Dr. Mohammed Youssef, mohammed youssef]
+- [Mohammed Hamdy, Hamdy, Dr.Hamdy, Dr. Mohammed Hamdy, mohammed hamdy, hamdy]
+- [Yasmine Afify, Dr.Yasmine Afify, Dr.Yasmine, yasmine afify, yasmine]
+- [Manal Tantawy, Dr.Manal Tantawy, Dr.Manal, manal tantawy, manal]
 
 # gpa entity
 ---
@@ -438,6 +458,13 @@ values:
 
 
 
+#OfficeHours Entity
+---
+type: entity
+name: DoctorBioVal
+automatically_extensible: yes
+values:
+- [Biography, biography]
 
 
 
