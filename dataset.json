@@ -1,5 +1,37 @@
 {
   "entities": {
+    "Available_SubjectsVal": {
+      "automatically_extensible": true,
+      "data": [],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "Availble_SubjectsVal": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [
+            "Availble Subjects"
+          ],
+          "value": "Availble Courses"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "Chatbot": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [
+            "chatbot"
+          ],
+          "value": "Chatbot"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
     "CourseDescriptionVal": {
       "automatically_extensible": true,
       "data": [
@@ -23,6 +55,12 @@
           "value": "operating system"
         }
       ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "Departement": {
+      "automatically_extensible": true,
+      "data": [],
       "matching_strictness": 1.0,
       "use_synonyms": true
     },
@@ -107,6 +145,17 @@
       "matching_strictness": 1.0,
       "use_synonyms": true
     },
+    "OfficeHoursVal": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [],
+          "value": "Office Hours"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
     "PaperType": {
       "automatically_extensible": true,
       "data": [
@@ -124,6 +173,99 @@
       "matching_strictness": 1.0,
       "use_synonyms": true
     },
+    "PrerquisitesVal": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [
+            "Available subjects",
+            "Requirements"
+          ],
+          "value": "Prerequesites"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "ReqPaymentVal": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [
+            "Money",
+            "Price",
+            "Payment",
+            "Tuition"
+          ],
+          "value": "Fees"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "Semester": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [
+            "1st semester",
+            "semester one"
+          ],
+          "value": "first semester"
+        },
+        {
+          "synonyms": [
+            "2nd semester",
+            "semester two"
+          ],
+          "value": "second semester"
+        },
+        {
+          "synonyms": [
+            "3rd semester",
+            "semester three"
+          ],
+          "value": "third semester"
+        },
+        {
+          "synonyms": [
+            "4th semester",
+            "semester four"
+          ],
+          "value": "fourth semester"
+        },
+        {
+          "synonyms": [
+            "5th semester",
+            "semester five"
+          ],
+          "value": "fifth semester"
+        },
+        {
+          "synonyms": [
+            "6th semester",
+            "semester six"
+          ],
+          "value": "sixth semester"
+        },
+        {
+          "synonyms": [
+            "7th semester",
+            "semester seven"
+          ],
+          "value": "seventh semester"
+        },
+        {
+          "synonyms": [
+            "8th semester",
+            "semester eight"
+          ],
+          "value": "eighth semester"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
     "ServiceType": {
       "automatically_extensible": true,
       "data": [
@@ -136,6 +278,48 @@
             "it"
           ],
           "value": "technician"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "Subjects": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [
+            "WE",
+            "Web",
+            "Web ENG"
+          ],
+          "value": "Web Engineering"
+        },
+        {
+          "synonyms": [
+            "BG",
+            "Big"
+          ],
+          "value": "Big Data"
+        },
+        {
+          "synonyms": [
+            "UI",
+            "User Interface"
+          ],
+          "value": "User Interface Design"
+        },
+        {
+          "synonyms": [
+            "Components",
+            "Component"
+          ],
+          "value": "Components-based programming"
+        },
+        {
+          "synonyms": [
+            "Cloud"
+          ],
+          "value": "Cloud Computing"
         }
       ],
       "matching_strictness": 1.0,
@@ -226,6 +410,108 @@
       "matching_strictness": 1.0,
       "use_synonyms": true
     },
+    "doctor_name": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [
+            "Dr.Abdelaziz",
+            "Dr. Abdelaziz Abdelhamid"
+          ],
+          "value": "Abdelaziz Abdelhamid"
+        },
+        {
+          "synonyms": [
+            "Dr.Safwat",
+            "Dr.Safwat Hamad"
+          ],
+          "value": "Safwat Hamad"
+        },
+        {
+          "synonyms": [
+            "Dr.Ghada"
+          ],
+          "value": "Ghada"
+        },
+        {
+          "synonyms": [
+            "Nevine"
+          ],
+          "value": "Dr.Nevine"
+        },
+        {
+          "synonyms": [
+            "Sally"
+          ],
+          "value": "Dr.Sally"
+        },
+        {
+          "synonyms": [
+            "Dr.Rasha",
+            "Dr.Rasha Ismail"
+          ],
+          "value": "Rasha Ismail"
+        },
+        {
+          "synonyms": [
+            "Dr.Islam Hegazy",
+            "Islam",
+            "Dr.Islam"
+          ],
+          "value": "Islam Hegazy"
+        },
+        {
+          "synonyms": [
+            "Mustafa",
+            "Dr.Mustapha Aref",
+            "Mustapha"
+          ],
+          "value": "Mustafa Aref"
+        },
+        {
+          "synonyms": [
+            "Dr.Khaled Bahnashy"
+          ],
+          "value": "Khaled Bahnasy"
+        },
+        {
+          "synonyms": [
+            "Bassant"
+          ],
+          "value": "Dr.Bassant"
+        },
+        {
+          "synonyms": [
+            "Dr. Mohammed Youssef"
+          ],
+          "value": "Mohammed Youssef"
+        },
+        {
+          "synonyms": [
+            "Hamdy",
+            "Dr.Hamdy",
+            "Dr. Mohammed Hamdy"
+          ],
+          "value": "Mohammed Hamdy"
+        },
+        {
+          "synonyms": [
+            "Dr.Yasmine Afify",
+            "Dr.Yasmine"
+          ],
+          "value": "Yasmine Afify"
+        },
+        {
+          "synonyms": [
+            "Dr.Manal Tantawy",
+            "Dr.Manal"
+          ],
+          "value": "Manal Tantawy"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
     "gpa": {
       "automatically_extensible": true,
       "data": [
@@ -258,6 +544,83 @@
     }
   },
   "intents": {
+    "AvalCourses": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "What are the "
+            },
+            {
+              "entity": "Available_SubjectsVal",
+              "slot_name": "AvailSubjects",
+              "text": "Availble Courses"
+            },
+            {
+              "text": " for this semester for "
+            },
+            {
+              "entity": "Department",
+              "slot_name": "dept",
+              "text": "Software Engineering"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What are the "
+            },
+            {
+              "entity": "Available_SubjectsVal",
+              "slot_name": "AvailSubjects",
+              "text": "Availble Courses"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "Year",
+              "slot_name": "yr",
+              "text": "1st year"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "Department",
+              "slot_name": "dept",
+              "text": "swe"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        }
+      ]
+    },
+    "Chatbot_info": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "Who are the users for the "
+            },
+            {
+              "entity": "Chatbot",
+              "slot_name": "Chatbot",
+              "text": "chatbot"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        }
+      ]
+    },
     "ClassLocation": {
       "utterances": [
         {
@@ -311,6 +674,25 @@
               "entity": "classLoc",
               "slot_name": "classLoc",
               "text": "IS Lab"
+            }
+          ]
+        }
+      ]
+    },
+    "DoctorOffice": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "where is "
+            },
+            {
+              "entity": "doctor_name",
+              "slot_name": "doc",
+              "text": "Dr.Ghada"
+            },
+            {
+              "text": " personal office?"
             }
           ]
         }
@@ -466,6 +848,33 @@
         }
       ]
     },
+    "GradingFormat": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "What is the coursework grading scheme for "
+            },
+            {
+              "entity": "Departement",
+              "slot_name": "Dep",
+              "text": "software engineering"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "Subjects",
+              "slot_name": "Sub",
+              "text": "Cloud"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        }
+      ]
+    },
     "NA": {
       "utterances": [
         {
@@ -500,6 +909,69 @@
           "data": [
             {
               "text": "Can i postponed an exam?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "How can I get financial aid?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Does the university offer studying a semester abroad?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What should i do if i have a problem regarding my degree?"
+            }
+          ]
+        }
+      ]
+    },
+    "OfficeHours": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "what are the "
+            },
+            {
+              "entity": "OfficeHoursVal",
+              "slot_name": "Officehours",
+              "text": "Office Hours"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "doctor_name",
+              "slot_name": "Name",
+              "text": "Abdelaziz"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "when is "
+            },
+            {
+              "entity": "doctor_name",
+              "slot_name": "Name",
+              "text": "Abdelaziz"
+            },
+            {
+              "text": " become available?"
             }
           ]
         }
@@ -547,6 +1019,48 @@
         }
       ]
     },
+    "Prerequisites": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "What are the "
+            },
+            {
+              "entity": "PrerquisitesVal",
+              "slot_name": "Prerequisites",
+              "text": "Prerequisites"
+            },
+            {
+              "text": " of a certain subject for "
+            },
+            {
+              "entity": "Department",
+              "slot_name": "dept",
+              "text": "sw"
+            },
+            {
+              "text": " (Software Engineering)?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What will be the "
+            },
+            {
+              "entity": "PrerquisitesVal",
+              "slot_name": "Prerequisites",
+              "text": "Prerequesites"
+            },
+            {
+              "text": " on passing certain subject?"
+            }
+          ]
+        }
+      ]
+    },
     "ReqCourseDescription": {
       "utterances": [
         {
@@ -581,6 +1095,113 @@
             },
             {
               "text": " ?"
+            }
+          ]
+        }
+      ]
+    },
+    "ReqPayment": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "How much is the "
+            },
+            {
+              "entity": "Year",
+              "slot_name": "Year",
+              "text": "first year"
+            },
+            {
+              "text": " "
+            },
+            {
+              "entity": "ReqPaymentVal",
+              "slot_name": "Fees",
+              "text": "Fees"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "Department",
+              "slot_name": "Dep",
+              "text": "software engineering"
+            },
+            {
+              "text": " (software engineering) ?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the "
+            },
+            {
+              "entity": "ReqPaymentVal",
+              "slot_name": "Fees",
+              "text": "Fees"
+            },
+            {
+              "text": " for the "
+            },
+            {
+              "entity": "Year",
+              "slot_name": "Year",
+              "text": "first year"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "How much are the "
+            },
+            {
+              "entity": "ReqPaymentVal",
+              "slot_name": "Fees",
+              "text": "Fees"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        }
+      ]
+    },
+    "ReqResultTime": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "When will the grades of the "
+            },
+            {
+              "entity": "Semester",
+              "slot_name": "Time",
+              "text": "Semester one"
+            },
+            {
+              "text": " will be out?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "When is the "
+            },
+            {
+              "entity": "Semester",
+              "slot_name": "Time",
+              "text": "first semester"
+            },
+            {
+              "text": " result ?"
             }
           ]
         }
@@ -718,7 +1339,7 @@
             {
               "entity": "Department",
               "slot_name": "dept",
-              "text": "software engineering"
+              "text": "bioinformatics"
             },
             {
               "text": "?"

@@ -1,3 +1,113 @@
+# Grading Schema Intent
+---
+type: intent
+name: GradingFormat
+slots:
+   - name: Sub
+     entity: Subjects
+   - name: Dep
+     entity: Departement
+utterances:
+   - What is the coursework grading scheme for [Dep](software engineering) for [Sub](Cloud)?
+
+
+# Office location Intent
+---
+type: intent
+name: DoctorOffice
+slots:
+   - name: doc
+     entity: doctor_name
+utterances:
+   - where is [doc](Dr.Ghada) personal office?
+
+
+# OfficeHours Intent
+---
+type: intent
+name: OfficeHours
+slots:
+   - name: Officehours
+     entity: OfficeHoursVal
+   - name: Name
+     entity: doctor_name
+utterances:
+   - what are the [Officehours](Office Hours) for [Name](Abdelaziz)?
+   - when is [Name](Abdelaziz) become available?
+
+# Chatbot Intent
+---
+type: intent
+name: Chatbot_info
+slots:
+   - name: Chatbot
+     entity: Chatbot
+utterances:
+   - Who are the users for the [Chatbot](chatbot)?
+
+
+# ReqResultTime Intent
+---
+type: intent
+name: ReqResultTime
+slots:
+   - name: Time
+     entity: Semester
+
+utterances:
+   - When will the grades of the [Time](Semester one) will be out?
+   - When is the [Time] result ?
+
+
+# ReqPayment Intent
+---
+type: intent
+name: ReqPayment
+slots:
+   - name: Fees
+     entity: ReqPaymentVal
+   - name: Dep
+     entity: Department
+   - name: Year
+     entity: Year
+utterances:
+   - How much is the [Year](first year) [Fees](Fees) for [Dep] (software engineering) ?
+   - what is the [Fees](Fees) for the [Year](first year)?
+   - How much are the [Fees]?
+
+#AvalCourses
+---
+type: intent
+name: AvalCourses
+slots:
+    - name: AvailSubjects
+      entity: Available_SubjectsVal
+    - name: dept
+      entity: Department
+    - name: yr
+      entity: Year
+utterances:
+    - What are the [AvailSubjects](Availble Courses) for this semester for [dept](Software Engineering)?
+    - What are the [AvailSubjects] for [yr](1st year) in [dept]?
+
+
+
+
+#Prerequisits
+---
+type: intent
+name: Prerequisites
+slots:
+    - name: Prerequisites
+      entity: PrerquisitesVal
+    - name: dept
+      entity: Department
+utterances:
+    - What are the [Prerequisites](Prerequisites) of a certain subject for [dept] (Software Engineering)?
+    - What will be the [Prerequisites] on passing certain subject?
+
+
+
 # requestGPA intent
 ---
 type: intent
@@ -25,6 +135,9 @@ utterances:
   - Can i submit assignment online?
   - What is the timetable of seminar ?
   - Can i postponed an exam?
+  - How can I get financial aid?
+  - Does the university offer studying a semester abroad?
+  - What should i do if i have a problem regarding my degree?
 
 # ReqSchedule intent
 ---
@@ -225,6 +338,14 @@ values:
 - [course , lecture]
 - course name
 
+#PrequisitesVal Entity
+---
+type: entity
+name: PrerquisitesVal
+automatically_extensible: yes
+values:
+- [Prerequesites, Available subjects, Requirements]
+
 
 # gpa entity
 ---
@@ -233,3 +354,90 @@ name: gpa
 automatically_extensible: yes
 values:
 - [gpa, marks, grades , result]
+
+# Available_Subjects entity
+---
+type: entity
+name: Availble_SubjectsVal
+autmatically_extensible: yes
+values:
+- [Availble Courses, Availble Subjects]
+
+# Fees entity
+---
+type: entity
+name: ReqPaymentVal
+automatically_extensible: yes
+values:
+- [Fees, Money, Price, Payment, Tuition]
+
+# Time entity
+---
+type: entity
+name: Semester
+automatically_extensible: yes
+values:
+- [ first semester, 1st semester , semester one]
+- [ second semester, 2nd semester , semester two]
+- [ third semester, 3rd semester , semester three]
+- [ fourth semester, 4th semester , semester four]
+- [ fifth semester, 5th semester , semester five]
+- [ sixth semester, 6th semester , semester six]
+- [ seventh semester, 7th semester , semester seven]
+- [ eighth semester, 8th semester , semester eight]
+
+# Doctor_Name entity
+---
+type: entity
+name: doctor_name
+automatically_extensible: yes
+values:
+- [Abdelaziz Abdelhamid, Dr.Abdelaziz, Dr. Abdelaziz Abdelhamid]
+- [Safwat Hamad, Dr.Safwat, Dr.Safwat Hamad]
+- [Ghada, Dr.Ghada]
+- [Dr.Nevine, Nevine]
+- [Dr.Sally, Sally]
+- [Rasha Ismail, Dr.Rasha, Dr.Rasha Ismail]
+- [Islam Hegazy, Dr.Islam Hegazy, Islam, Dr.Islam]
+- [Mustafa Aref, Mustafa, Dr.Mustapha Aref, Mustapha]
+- [Khaled Bahnasy, Dr.Khaled Bahnashy]
+- [Dr.Bassant,Bassant]
+- [Mohammed Youssef, Dr. Mohammed Youssef]
+- [Mohammed Hamdy, Hamdy, Dr.Hamdy, Dr. Mohammed Hamdy]
+- [Yasmine Afify, Dr.Yasmine Afify, Dr.Yasmine]
+- [Manal Tantawy, Dr.Manal Tantawy, Dr.Manal]
+
+# gpa entity
+---
+type: entity
+name: Chatbot
+automatically_extensible: yes
+values:
+- [Chatbot, chatbot]
+
+#OfficeHours Entity
+---
+type: entity
+name: OfficeHoursVal
+automatically_extensible: yes
+values:
+- [Office Hours]
+
+#Subjects Entity
+---
+type: entity
+name: Subjects
+automatically_extensible: yes
+values:
+- [Web Engineering, WE, Web, Web ENG]
+- [Big Data, BG, Big]
+- [User Interface Design, UI, User Interface]
+- [Components-based programming, Components, Component]
+- [Cloud Computing, Cloud]
+
+
+
+
+
+
+
