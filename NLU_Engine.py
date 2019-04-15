@@ -47,12 +47,12 @@ class NLU:
             self.__engine.fit(self.__dataset)
 
             #UnComment to save the model
-            #self.__engine.persist("Z:\FCIS-ASU\Semester 8\AllSnipsModel")
+            #self.__engine.persist("Z:\FCIS-ASU\Semester 8\ChatbotModel")
 
         elif mode =="Test":
             with io.open("dataset.json") as f:
                self.__dataset = json.load(f)
-            self.__engine = SnipsNLUEngine.from_path("Z:\FCIS-ASU\Semester 8\AllSnipsModel")
+            self.__engine = SnipsNLUEngine.from_path("Z:\FCIS-ASU\Semester 8\ChatbotModel")
 
 
 
@@ -64,7 +64,8 @@ class NLU:
 
     def __excute(self):
         parsing = self.__engine.parse(self._query)
-        self.__result = json.loads(json.dumps(parsing))
+        self.__result = json.loads(json.dumps(parsing,indent=1))
+        print( self.__result )
 
     def _getIntent(self):
         try:
@@ -84,7 +85,12 @@ class NLU:
         if len(self.__result['slots']) != 0:
             for x in range(len(self.__result['slots'])):
                 if not re.search("Val",self.__result['slots'][x]['entity']):
-                 dic[self.__result['slots'][x]['entity']] = self.__result['slots'][x]['rawValue']
+                    if str(self.__result['slots'][x]['entity']).__contains__("snips"):
+                        dic[self.__result['slots'][x]['slotName']] = self.__result['slots'][x]['rawValue']
+                    else:
+                        dic[self.__result['slots'][x]['entity']] = self.__result['slots'][x]['rawValue']
+        else:
+            return "No Slots"
 
         self._slots = dic
         return self._slots
@@ -112,18 +118,23 @@ class NLU:
             print('ChatBot : not available due to intent')
 
     def checkSlots(self):
+        self.__nluSlots = self._getSlots()
+        if str(self.__nluSlots).__contains__("No Slots") :
+            return "No"
         datasetSlots = []
         print(self._getIntent())
         for i in range(len(self.__dataset['intents'][self._getIntent()]['utterances'])):
             for j in range(len(self.__dataset['intents'][self._getIntent()]['utterances'][i]['data'])):
                 check = json.dumps(self.__dataset['intents'][self._getIntent()]['utterances'][i]['data'][j])
                 if 'entity' in check:
-                    datasetSlots.append(self.__dataset['intents'][self._getIntent()]['utterances'][i]['data'][j]['entity'])
+                    if str(self.__dataset['intents'][self._getIntent()]['utterances'][i]['data'][j]['entity']).__contains__("snips"):
+                        datasetSlots.append(self.__dataset['intents'][self._getIntent()]['utterances'][i]['data'][j]['slot_name'])
+                    else:
+                        datasetSlots.append(self.__dataset['intents'][self._getIntent()]['utterances'][i]['data'][j]['entity'])
                     datasetSlots = list(dict.fromkeys(datasetSlots))
         for x in datasetSlots:
             if 'Val' in x:
                 datasetSlots.remove(x)
-        self.__nluSlots = self._getSlots()
         ret = []
         for i in range(len(datasetSlots)):
             found = False
@@ -141,14 +152,29 @@ class NLU:
         slots_needed = self._getSlots()
         # print(slots_needed)
         slots_missing = self.checkSlots()
+        if str(slots_missing).__contains__("No"):
+            return
         loopflagi = True
         # print(temp3[1]);
         for i in range(len(slots_missing)):
             loopflagi = False
             while not loopflagi:
+
                 print("Chatbot: Please Enter", slots_missing[i])
-                reply = input("User: ")
+
+                if slots_missing[i] == "ID":
+                    try:
+                        reply = int(input("User: "))
+                    except:
+                        print("Chatbot: Please Enter a valid ID")
+                        continue
+                else:
+                    reply = input("User: ")
+
                 if reply == 'q':
+                    break
+                if str(slots_missing[i]).__contains__("ID"):
+                    self.__nluSlots[slots_missing[i]] = reply
                     break
                 for j in range(len(self.__dataset['entities'][slots_missing[i]])):
                     try:
@@ -157,26 +183,38 @@ class NLU:
                         continue
                     if reply in check:
                         # e3ml 7aga
-                        slots_needed[slots_missing[i]] = reply
+                        self.__nluSlots[slots_missing[i]] = reply
                         loopflagi = True
                         break
-        return slots_needed
+        return self.__nluSlots
 
     def return_original(self):
         slots_needed = self.askForunenteredEntities()
         if slots_needed is None:
+            self.__interaction.UnAnsweredFactory().__noIntent_insert__(self._query)
+            print("ChatBot : I don't have answer for this")
             return
+
         key_list = list(slots_needed.keys())
+
         # print(key_list)
         finaldic = dict()
         for key in range(len(key_list)):
             # print(key_list[key] + "here")
             # print(slots_needed[key_list[key]])
             # do something
-            for i in range(len(self.__dataset['entities'][key_list[key]]["data"])):
-                check = json.dumps(self.__dataset['entities'][key_list[key]]["data"][i])
-                if slots_needed[key_list[key]] in check:
-                    finaldic[key_list[key]] = self.__dataset['entities'][key_list[key]]["data"][i]["value"]
-                    # print(self.__dataset['entities'][key_list[key]]["data"][i]["value"])
-        print("Values to get from Database" , finaldic)  # original values of entities used in question
+            if key_list[key] == "ID":
+                continue
+            # print("Key :",key_list[key])
+
+            try:
+                for i in range(len(self.__dataset['entities'][key_list[key]]["data"])):
+                    check = json.dumps(self.__dataset['entities'][key_list[key]]["data"][i])
+                    if slots_needed[key_list[key]] in check:
+                        self.__nluSlots[key_list[key]] = self.__dataset['entities'][key_list[key]]["data"][i]["value"]
+                        # print(self.__dataset['entities'][key_list[key]]["data"][i]["value"])
+            except:
+                print("Error")
+
+        print("Values to get from Database" , self.__nluSlots)  # original values of entities used in question
         # return List or dictionary??

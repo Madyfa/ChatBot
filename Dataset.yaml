@@ -140,10 +140,10 @@ slots:
      entity: snips/number
 
 utterances:
-   - what is my [gpa](gpa) ?
-   - give me my [gpa] please
-   - i want to know my [gpa]
-   - could you tell me my [gpa]?
+   - what is my [gpa](gpa)[ID] ?
+   - give me my [gpa] please [ID]
+   - i want to know my [gpa](gpa)[ID]
+   - could you tell me my [gpa](gpa)[ID]?
 
 # NA intent
 ---
@@ -172,10 +172,11 @@ slots:
 
   - name: yr
     entity: Year
+
 utterances:
   - What is the [Schedule](Schedule) for [dept](software engineering) in [yr](year 1) ?
   - where is my course's [Schedule]?
-  - What's my [Schedule] for this term?
+  - What is my [Schedule] for this term?
   - when does [Schedule] start?
   - In which lecture [Schedule] does my next lecture take place?
   - At what [Schedule] is my next lecture?
@@ -276,13 +277,16 @@ type: entity
 name: type
 automatically_extensible: no
 values:
-   - [oral, practical, final, midterm]
+   - oral
+   - practical
+   - final
+   - midterm
 
 # CourseDescriptionVal entity
 ---
 type: entity
 name: CourseDescriptionVal
-automatically_extensible: yes
+automatically_extensible: no
 values:
 - [course information, course description, course details ,course]
 
@@ -290,7 +294,7 @@ values:
 ---
 type: entity
 name: CourseName
-automatically_extensible: yes
+automatically_extensible: no
 values:
 - operating system
 
@@ -299,7 +303,7 @@ values:
 ---
 type: entity
 name : DocumentVal
-automatically_extensible: yes
+automatically_extensible: no
 values:
 - [paper , papers]
 
@@ -307,7 +311,7 @@ values:
 ---
 type: entity
 name: PaperType
-automatically_extensible: yes
+automatically_extensible: no
 values:
 - [submission, admission]
 - certificate of registration
@@ -316,7 +320,7 @@ values:
 ---
 type: entity
 name: ServiceType
-automatically_extensible: yes
+automatically_extensible: no
 values:
 - buffet
 - [technician, it]
@@ -335,7 +339,7 @@ values:
 ---
 type: entity
 name: Department
-automatically_extensible: yes
+automatically_extensible: no
 values:
 - [software engineering, swe, sw]
 - [bioinformatics, bio]
@@ -351,7 +355,7 @@ values:
 ---
 type: entity
 name: TimetableVal
-automatically_extensible: yes
+automatically_extensible: no
 values:
 - [timetable, schedule, time]
 - [hall, class location]
@@ -362,7 +366,7 @@ values:
 ---
 type: entity
 name: PrerquisitesVal
-automatically_extensible: yes
+automatically_extensible: no
 values:
 - [Prerequesites, Available subjects, Requirements]
 
@@ -370,8 +374,8 @@ values:
 # gpa entity
 ---
 type: entity
-name: gpa
-automatically_extensible: yes
+name: gpaVal
+automatically_extensible: no
 values:
 - [gpa, marks, grades , result]
 
@@ -379,7 +383,7 @@ values:
 ---
 type: entity
 name: Availble_SubjectsVal
-autmatically_extensible: yes
+autmatically_extensible: no
 values:
 - [Availble Courses, Availble Subjects]
 
@@ -387,7 +391,7 @@ values:
 ---
 type: entity
 name: ReqPaymentVal
-automatically_extensible: yes
+automatically_extensible: no
 values:
 - [Fees, Money, Price, Payment, Tuition]
 
@@ -395,7 +399,7 @@ values:
 ---
 type: entity
 name: Semester
-automatically_extensible: yes
+automatically_extensible: no
 values:
 - [ first semester, 1st semester , semester one]
 - [ second semester, 2nd semester , semester two]
@@ -410,7 +414,7 @@ values:
 ---
 type: entity
 name: doctor_name
-automatically_extensible: yes
+automatically_extensible: no
 values:
 - [Abdelaziz Abdelhamid, Dr.Abdelaziz, Dr. Abdelaziz Abdelhamid,abdelaziz]
 - [Safwat Hamad, Dr.Safwat, Dr.Safwat Hamad, safwat]
@@ -431,7 +435,7 @@ values:
 ---
 type: entity
 name: Chatbot
-automatically_extensible: yes
+automatically_extensible: no
 values:
 - [Chatbot, chatbot]
 
@@ -439,7 +443,7 @@ values:
 ---
 type: entity
 name: OfficeHoursVal
-automatically_extensible: yes
+automatically_extensible: no
 values:
 - [Office Hours]
 
@@ -447,7 +451,7 @@ values:
 ---
 type: entity
 name: Subjects
-automatically_extensible: yes
+automatically_extensible: no
 values:
 - [Web Engineering, WE, Web, Web ENG]
 - [Big Data, BG, Big]
@@ -462,7 +466,7 @@ values:
 ---
 type: entity
 name: DoctorBioVal
-automatically_extensible: yes
+automatically_extensible: no
 values:
 - [Biography, biography]
 
