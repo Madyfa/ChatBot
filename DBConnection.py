@@ -1,18 +1,21 @@
 import pyodbc as db
 
-dbconn = db.connect("Driver={SQL SERVER};Server=.;Database=CBT;Trusted_Connection=yes;")
-cursor = dbconn.cursor()
+
 
 class Database:
 
+    def __init__(self):
+        self.dbconn = db.connect("Driver={SQL SERVER};Server=.;Database=CBT;Trusted_Connection=yes;")
+        self.cursor = self.dbconn.cursor()
+
     def DBconnect(self):
         print("Connecting to Database...")
-        return dbconn
+        return self.dbconn , self.cursor
 
     def CursorConnection(self):
-        return cursor
+        return self.cursor
 
     def DBdisconnect(self):
         print("Disconnecting from Database...")
-        cursor.close()
-        dbconn.close()
+        self.cursor.close()
+        self.dbconn.close()

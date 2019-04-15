@@ -1,27 +1,18 @@
-# from User import User
-# from NLU_Engine import NLU
-#
-# nlu = NLU()
-#
-# nlu.setQuaery('give me my gpa')
-#
-# # print(nlu.checkSlot())
-#
-#
-#
-
 from past.builtins import raw_input
 
 from User import User
 from NLU_Engine import NLU
 
-
-
+#### Feedback
+#### Logs
+#### Another Question while asking for entity value
+#### Change Yaml entities values to LowerCase
 
 if __name__ == "__main__":
 
     flag = 1
     nlu = NLU()
+    nlu.EngineMode("Train")
     while (flag):
         question = raw_input("User : ")
 
@@ -31,5 +22,9 @@ if __name__ == "__main__":
             break
 
         nlu.setQuery(question)
+
+        nlu.answer()
+
+
 
 

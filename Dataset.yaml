@@ -134,7 +134,7 @@ type: intent
 name: requestGPA
 slots:
    - name: gpa
-     entity: gpa
+     entity: gpaVal
 
    - name: ID
      entity: snips/number

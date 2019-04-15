@@ -1,15 +1,12 @@
 from DBConnection import Database as DB
 
 
-cursor = DB().CursorConnection()
+#cursor = DB().CursorConnection()
 
 class intent :
-     def __init__(self , conn):
-            self.DBconn = conn
-            print("Intent")
 
      def GetIntent(self , Name):
-
+            conn , cursor = DB().DBconnect()
             command = """
             Select ID From CBT_LKP_Intent Where Name = '{0}'
             """.format(Name)
@@ -20,9 +17,11 @@ class intent :
                     tpl.append(row)
             except Exception as e:
                 print("Error ", e)
+            DB().DBdisconnect()
             return tpl
 
      def SaveIntent ( self, name ):
+        conn , cursor = DB().DBconnect()
         command ="""
         EXEC CBT_LKP_Intent_INS @Name=?
         """
@@ -30,12 +29,14 @@ class intent :
         try:
             cursor.execute(command,arg)
             print("Inserted Successfully")
-            self. DBconn.commit()
+            conn.commit()
         except Exception as e:
             print("Error ",e)
+        DB().DBdisconnect()
 
 
      def UpdateIntent(self,id,name):
+        conn , cursor = DB().DBconnect()
         command ="""
         EXEC CBT_LKP_Intent_UPD @ID=? ,@Name=? 
         """
@@ -43,12 +44,14 @@ class intent :
         try:
             cursor.execute(command,arg)
             print("Updated Successfully")
-            self.DBconn.commit()
+            conn.commit()
 
         except Exception as e:
             print("Error ",e)
+        DB().DBdisconnect()
 
      def DeleteIntent(self,id):
+        conn , cursor = DB().DBconnect()
         command ="""
         EXEC CBT_LKP_Intent_DEL @ID=?
         """
@@ -56,19 +59,16 @@ class intent :
         try:
             cursor.execute(command,arg)
             print("Deleted Successfully")
-            self.DBconn.commit()
+            conn.commit()
 
         except Exception as e:
             print("Error ",e)
+        DB().DBdisconnect()
 
 class slots:
 
-
-    def __init__(self,conn):
-        self.DBconn = conn
-        print("Slot")
-
     def GetIntentSlot(self , IntentName):
+        conn , cursor = DB().DBconnect()
         command = """
         Select Slot From CBT_LNK_IntentSlot_VIW Where Intent = '{0}'   
         """.format(IntentName)
@@ -79,9 +79,11 @@ class slots:
                 tpl.append(row)
         except Exception as e:
             print("Error ", e)
+        DB().DBdisconnect()
         return tpl
 
     def ShowSlots(self):
+        conn , cursor = DB().DBconnect()
         command = """
         Select * From CBT_LKP_Slot
         """
@@ -91,8 +93,10 @@ class slots:
                 print(row)
         except Exception as e:
             print("Error ", e)
+        DB().DBdisconnect()
 
     def GetSlot(self,name):
+        conn , cursor = DB().DBconnect()
         command = """
         Select ID From CBT_LKP_Slot Where Name = '{0}'
         """.format(name)
@@ -103,10 +107,12 @@ class slots:
                 tpl.append(row)
         except Exception as e:
             print("Error ", e)
+        DB().DBdisconnect()
         return tpl
 
 
     def SaveSlot(self,name):
+        conn , cursor = DB().DBconnect()
         command ="""
         EXEC CBT_LKP_Slot_INS @Name=? 
         """
@@ -114,13 +120,14 @@ class slots:
         try:
             cursor.execute(command,arg)
             print("Inserted Successfully")
-            self.DBconn.commit()
+            conn.commit()
         except Exception as e:
             print("Error ",e)
+        DB().DBdisconnect()
 
 
     def SaveIntentSlot(self,intentID,slotID):
-
+        conn , cursor = DB().DBconnect()
         command ="""
         EXEC CBT_LNK_IntentSlot_INS @IntentID=? , @SlotID=?
         """
@@ -128,13 +135,14 @@ class slots:
         try:
             cursor.execute(command,arg)
             print("Inserted Successfully")
-            self.DBconn.commit()
+            conn.commit()
         except Exception as e:
             print("Error ",e)
+        DB().DBdisconnect()
 
 
     def UpdateSlot(self,id,name):
-
+        conn , cursor = DB().DBconnect()
         command ="""
         EXEC CBT_LKP_Slot_UPD @ID=? ,@Name=? 
         """
@@ -142,16 +150,16 @@ class slots:
         try:
             cursor.execute(command,arg)
             print("Updated Successfully")
-            self.DBconn.commit()
+            conn.commit()
 
         except Exception as e:
             print("Error ",e)
-
+        DB().DBdisconnect()
 
 
 
     def UpdateIntentSlot(self,id,intent,slot):
-
+        conn , cursor = DB().DBconnect()
         command ="""
         EXEC CBT_LNK_IntentSlot_UPD @ID=? ,@IntentID=? ,@SlotID=?
         """
@@ -159,13 +167,15 @@ class slots:
         try:
             cursor.execute(command,arg)
             print("Updated Successfully")
-            self.DBconn.commit()
+            conn.commit()
 
         except Exception as e:
             print("Error ",e)
+        DB().DBdisconnect()
 
 
     def DeleteSlot(self,id):
+        conn , cursor = DB().DBconnect()
         command ="""
         EXEC CBT_LKP_Slot_DEL @ID=?
         """
@@ -173,13 +183,14 @@ class slots:
         try:
             cursor.execute(command,arg)
             print("Deleted Successfully")
-            self.DBconn.commit()
+            conn.commit()
 
         except Exception as e:
             print("Error ",e)
-
+        DB().DBdisconnect()
 
     def DeleteIntentSlot(self,id):
+        conn , cursor = DB().DBconnect()
         command ="""
         EXEC CBT_LNK_IntentSlot_DEL @ID=?
         """
@@ -187,18 +198,16 @@ class slots:
         try:
             cursor.execute(command,arg)
             print("Deleted Successfully")
-            self.DBconn.commit()
+            conn.commit()
 
         except Exception as e:
             print("Error ",e)
+        DB().DBdisconnect()
 
 class logs:
 
-    def __init__(self,conn):
-        self.connection = conn
-        print("Logs")
-
     def __logs_insert__(self ,Q , A ):
+        conn , cursor = DB().DBconnect()
         command = """
                   EXEC CBT_Log_INS @Question=? , @Answer=?
                   """
@@ -206,12 +215,14 @@ class logs:
         try:
             cursor.execute(command, arg)
             print("Inserted Successfully")
-            self.connection.commit()
+            conn.commit()
 
         except Exception as e:
             print("Error ", e)
+        DB().DBdisconnect()
 
     def __logs_update__(self, _id ,Q , A ):
+        conn , cursor = DB().DBconnect()
         command = """
                           EXEC CBT_Log_UPD @ID=?, @Question=? , @Answer=?
                           """
@@ -219,11 +230,13 @@ class logs:
         try:
             cursor.execute(command, arg)
             print("Updated Successfully")
-            self.connection.commit()
+            conn.commit()
         except Exception as e:
             print("Error ", e)
+        DB().DBdisconnect()
 
     def __logs_delete__(self, _id):
+        conn , cursor = DB().DBconnect()
         command = """
                              EXEC CBT_Log_DEL @ID=?
                              """
@@ -231,17 +244,15 @@ class logs:
         try:
             cursor.execute(command, arg)
             print("Deleted Successfully")
-            self.connection.commit()
+            conn.commit()
         except Exception as e:
             print("Error ", e)
+        DB().DBdisconnect()
 
 class feedback:
 
-    def __init__(self,conn):
-        self.connection = conn
-        print("FeedBack")
-
     def __feedback_insert__(self , Log_ID, Rate, Message):
+        conn , cursor = DB().DBconnect()
         command = """
                EXEC CBT_Feedback_INS @logid=? , @rate=? , @text=?
                """
@@ -249,11 +260,13 @@ class feedback:
         try:
             cursor.execute(command, arg)
             print("Inserted Successfully")
-            self.connection.commit()
+            conn.commit()
         except Exception as e:
             print("Error ", e)
+        DB().DBdisconnect()
 
     def __feedback_delete__(self, _id):
+        conn , cursor = DB().DBconnect()
         command = """
                EXEC CBT_Feedback_DEL @id=?
                """
@@ -261,11 +274,13 @@ class feedback:
         try:
             cursor.execute(command, arg)
             print("Deleted Successfully")
-            self.connection.commit()
+            conn.commit()
         except Exception as e:
             print("Error ", e)
+        DB().DBdisconnect()
 
     def __feedback_update__(self, _id , Log_ID, Rate, Message):
+        conn , cursor = DB().DBconnect()
         command = """
                EXEC CBT_Feedback_UPD @id=?, @logid=? , @rate=? , @text=?
                """
@@ -273,16 +288,15 @@ class feedback:
         try:
             cursor.execute(command, arg)
             print("updated Successfully")
-            self.connection.commit()
+            conn.commit()
         except Exception as e:
             print("Error ", e)
+        DB().DBdisconnect()
 
 class lowProb:
-    def __init__(self,conn):
-        self.connection = conn
-        print("Low Probability")
 
     def __lowProb_selectAll__(self):
+        conn , cursor = DB().DBconnect()
         command = """
                           select Question , Intent from CBT_LowProb_VIW
                           """
@@ -292,8 +306,10 @@ class lowProb:
                 print(row)
         except Exception as e:
             print("Error ", e)
+        DB().DBdisconnect()
 
     def __lowProb_selectIntent__(self, ID):
+        conn , cursor = DB().DBconnect()
         command = """
                           select * from CBT_LowProb_VIW where IntentID= %d
                           """ % ID
@@ -304,8 +320,10 @@ class lowProb:
                 print(row)
         except Exception as e:
             print("Error ", e)
+        DB().DBdisconnect()
 
     def __lowProb_insert__(self , Q, IntentID):
+        conn , cursor = DB().DBconnect()
         command = """
                   EXEC CBT_LowProb_INS @Question=?, @IntentID=?
                   """
@@ -313,11 +331,13 @@ class lowProb:
         try:
             cursor.execute(command, arg)
             print("Inserted Successfully")
-            self.connection.commit()
+            conn.commit()
         except Exception as e:
             print("Error ", e)
+        DB().DBdisconnect()
 
     def __lowProb_update__(self, _id , Q, IntentID):
+        conn , cursor = DB().DBconnect()
         command = """
                           EXEC CBT_LowProb_UPD @ID=?, @Question=?, @IntentID=?
                           """
@@ -325,11 +345,13 @@ class lowProb:
         try:
             cursor.execute(command, arg)
             print("Updated Successfully")
-            self.connection.commit()
+            conn.commit()
         except Exception as e:
             print("Error ", e)
+        DB().DBdisconnect()
 
     def __lowProb_delete__(self, _id):
+        conn , cursor = DB().DBconnect()
         command = """
                              EXEC CBT_LowProb_DEL @ID=?
                              """
@@ -337,17 +359,15 @@ class lowProb:
         try:
             cursor.execute(command, arg)
             print("Deleted Successfully")
-            self.connection.commit()
+            conn.commit()
         except Exception as e:
             print("Error ", e)
+        DB().DBdisconnect()
 
 class UnAnswered:
 
-    def __init__(self,conn):
-        self.connection = conn
-        print("No Intent")
-
     def __noIntent_selectAll__(self):
+        conn , cursor = DB().DBconnect()
         command = """
                           select Question from CBT_NoIntent_VIW
                           """
@@ -357,8 +377,10 @@ class UnAnswered:
                 print(row)
         except Exception as e:
             print("Error ", e)
+        DB().DBdisconnect()
 
     def __noIntent_insert__( self , Q ):
+        conn , cursor = DB().DBconnect()
         command = """
                   EXEC CBT_NoIntent_INS @Question=?
                   """
@@ -366,11 +388,13 @@ class UnAnswered:
         try:
             cursor.execute(command, arg)
             print("Inserted Successfully")
-            self.connection.commit()
+            conn.commit()
         except Exception as e:
             print("Error ", e)
+        DB().DBdisconnect()
 
     def __noIntent_update__(self, _id , Q):
+        conn , cursor = DB().DBconnect()
         command = """
                           EXEC CBT_NoIntent_UPD @ID=?, @Question=?
                           """
@@ -378,11 +402,13 @@ class UnAnswered:
         try:
             cursor.execute(command, arg)
             print("Updated Successfully")
-            self.connection.commit()
+            conn.commit()
         except Exception as e:
             print("Error ", e)
+        DB().DBdisconnect()
 
     def __noIntent_delete__(self, _id):
+        conn , cursor = DB().DBconnect()
         command = """
                              EXEC CBT_NoIntent_DEL @ID=?
                              """
@@ -390,8 +416,9 @@ class UnAnswered:
         try:
             cursor.execute(command, arg)
             print("Deleted Successfully")
-            self.connection.commit()
+            conn.commit()
         except Exception as e:
             print("Error ", e)
+        DB().DBdisconnect()
 
 
