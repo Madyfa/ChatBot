@@ -1,70 +1,6 @@
 {
   "entities": {
-    "Available_SubjectsVal": {
-      "automatically_extensible": true,
-      "data": [],
-      "matching_strictness": 1.0,
-      "use_synonyms": true
-    },
-    "Availble_SubjectsVal": {
-      "automatically_extensible": true,
-      "data": [
-        {
-          "synonyms": [
-            "Availble Subjects"
-          ],
-          "value": "Availble Courses"
-        }
-      ],
-      "matching_strictness": 1.0,
-      "use_synonyms": true
-    },
-    "Chatbot": {
-      "automatically_extensible": false,
-      "data": [
-        {
-          "synonyms": [
-            "chatbot"
-          ],
-          "value": "Chatbot"
-        }
-      ],
-      "matching_strictness": 1.0,
-      "use_synonyms": true
-    },
-    "CourseDescriptionVal": {
-      "automatically_extensible": false,
-      "data": [
-        {
-          "synonyms": [
-            "course description",
-            "course details",
-            "course"
-          ],
-          "value": "course information"
-        }
-      ],
-      "matching_strictness": 1.0,
-      "use_synonyms": true
-    },
-    "CourseName": {
-      "automatically_extensible": false,
-      "data": [
-        {
-          "synonyms": [],
-          "value": "operating system"
-        }
-      ],
-      "matching_strictness": 1.0,
-      "use_synonyms": true
-    },
-    "Departement": {
-      "automatically_extensible": true,
-      "data": [],
-      "matching_strictness": 1.0,
-      "use_synonyms": true
-    },
-    "Department": {
+    "ENT_Department": {
       "automatically_extensible": false,
       "data": [
         {
@@ -118,160 +54,155 @@
       "matching_strictness": 1.0,
       "use_synonyms": true
     },
-    "DoctorBioVal": {
+    "ENT_DoctorBioVal": {
       "automatically_extensible": false,
       "data": [
         {
           "synonyms": [
-            "biography"
+            "profile",
+            "life story",
+            "life history"
           ],
-          "value": "Biography"
+          "value": "biography"
         }
       ],
       "matching_strictness": 1.0,
       "use_synonyms": true
     },
-    "DocumentVal": {
-      "automatically_extensible": false,
-      "data": [
-        {
-          "synonyms": [
-            "papers"
-          ],
-          "value": "paper"
-        }
-      ],
-      "matching_strictness": 1.0,
-      "use_synonyms": true
-    },
-    "Exam": {
-      "automatically_extensible": false,
-      "data": [
-        {
-          "synonyms": [
-            "examination",
-            "test"
-          ],
-          "value": "Exam"
-        }
-      ],
-      "matching_strictness": 1.0,
-      "use_synonyms": true
-    },
-    "OfficeHoursVal": {
+    "ENT_GradingSchemaVal": {
       "automatically_extensible": false,
       "data": [
         {
           "synonyms": [],
-          "value": "Office Hours"
+          "value": "grading schema"
         }
       ],
       "matching_strictness": 1.0,
       "use_synonyms": true
     },
-    "PaperType": {
+    "ENT_OfficeHoursVal": {
       "automatically_extensible": false,
       "data": [
         {
           "synonyms": [
-            "admission"
+            "available",
+            "free"
           ],
-          "value": "submission"
-        },
-        {
-          "synonyms": [],
-          "value": "certificate of registration"
+          "value": "office hours"
         }
       ],
       "matching_strictness": 1.0,
       "use_synonyms": true
     },
-    "PrerquisitesVal": {
+    "ENT_OfficeVal": {
       "automatically_extensible": false,
       "data": [
         {
           "synonyms": [
-            "Available subjects",
-            "Requirements"
+            "office",
+            "place",
+            "work place"
           ],
-          "value": "Prerequesites"
+          "value": "personal office"
         }
       ],
       "matching_strictness": 1.0,
       "use_synonyms": true
     },
-    "ReqPaymentVal": {
+    "ENT_ReqPaymentVal": {
       "automatically_extensible": false,
       "data": [
         {
           "synonyms": [
-            "Money",
-            "Price",
-            "Payment",
-            "Tuition"
+            "money",
+            "price",
+            "payment",
+            "tuition fees",
+            "bill"
           ],
-          "value": "Fees"
+          "value": "fees"
         }
       ],
       "matching_strictness": 1.0,
       "use_synonyms": true
     },
-    "Semester": {
+    "ENT_ResultVal": {
+      "automatically_extensible": false,
+      "data": [
+        {
+          "synonyms": [
+            "grades"
+          ],
+          "value": "result"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "ENT_Semester": {
       "automatically_extensible": false,
       "data": [
         {
           "synonyms": [
             "1st semester",
-            "semester one"
+            "semester one",
+            "semester 1"
           ],
           "value": "first semester"
         },
         {
           "synonyms": [
             "2nd semester",
-            "semester two"
+            "semester two",
+            "semester 2"
           ],
           "value": "second semester"
         },
         {
           "synonyms": [
             "3rd semester",
-            "semester three"
+            "semester three",
+            "semester 3"
           ],
           "value": "third semester"
         },
         {
           "synonyms": [
             "4th semester",
-            "semester four"
+            "semester four",
+            "semester 4"
           ],
           "value": "fourth semester"
         },
         {
           "synonyms": [
             "5th semester",
-            "semester five"
+            "semester five",
+            "semester 5"
           ],
           "value": "fifth semester"
         },
         {
           "synonyms": [
             "6th semester",
-            "semester six"
+            "semester six",
+            "semester 6"
           ],
           "value": "sixth semester"
         },
         {
           "synonyms": [
             "7th semester",
-            "semester seven"
+            "semester seven",
+            "semester 7"
           ],
           "value": "seventh semester"
         },
         {
           "synonyms": [
             "8th semester",
-            "semester eight"
+            "semester eight",
+            "semester 8"
           ],
           "value": "eighth semester"
         }
@@ -279,96 +210,7 @@
       "matching_strictness": 1.0,
       "use_synonyms": true
     },
-    "ServiceType": {
-      "automatically_extensible": false,
-      "data": [
-        {
-          "synonyms": [],
-          "value": "buffet"
-        },
-        {
-          "synonyms": [
-            "it"
-          ],
-          "value": "technician"
-        }
-      ],
-      "matching_strictness": 1.0,
-      "use_synonyms": true
-    },
-    "Subjects": {
-      "automatically_extensible": false,
-      "data": [
-        {
-          "synonyms": [
-            "WE",
-            "Web",
-            "Web ENG"
-          ],
-          "value": "Web Engineering"
-        },
-        {
-          "synonyms": [
-            "BG",
-            "Big"
-          ],
-          "value": "Big Data"
-        },
-        {
-          "synonyms": [
-            "UI",
-            "User Interface"
-          ],
-          "value": "User Interface Design"
-        },
-        {
-          "synonyms": [
-            "Components",
-            "Component"
-          ],
-          "value": "Components-based programming"
-        },
-        {
-          "synonyms": [
-            "Cloud"
-          ],
-          "value": "Cloud Computing"
-        }
-      ],
-      "matching_strictness": 1.0,
-      "use_synonyms": true
-    },
-    "TimetableVal": {
-      "automatically_extensible": false,
-      "data": [
-        {
-          "synonyms": [
-            "schedule",
-            "time"
-          ],
-          "value": "timetable"
-        },
-        {
-          "synonyms": [
-            "class location"
-          ],
-          "value": "hall"
-        },
-        {
-          "synonyms": [
-            "lecture"
-          ],
-          "value": "course"
-        },
-        {
-          "synonyms": [],
-          "value": "course name"
-        }
-      ],
-      "matching_strictness": 1.0,
-      "use_synonyms": true
-    },
-    "Year": {
+    "ENT_Year": {
       "automatically_extensible": true,
       "data": [
         {
@@ -409,173 +251,12 @@
       "matching_strictness": 1.0,
       "use_synonyms": true
     },
-    "classLoc": {
-      "automatically_extensible": false,
-      "data": [
-        {
-          "synonyms": [
-            "CS Lab",
-            "IS Lab"
-          ],
-          "value": "SW Lab"
-        }
-      ],
-      "matching_strictness": 1.0,
-      "use_synonyms": true
-    },
-    "doctor_name": {
-      "automatically_extensible": false,
-      "data": [
-        {
-          "synonyms": [
-            "Dr.Abdelaziz",
-            "Dr. Abdelaziz Abdelhamid",
-            "abdelaziz"
-          ],
-          "value": "Abdelaziz Abdelhamid"
-        },
-        {
-          "synonyms": [
-            "Dr.Safwat",
-            "Dr.Safwat Hamad",
-            "safwat"
-          ],
-          "value": "Safwat Hamad"
-        },
-        {
-          "synonyms": [
-            "Dr.Ghada",
-            "ghada"
-          ],
-          "value": "Ghada"
-        },
-        {
-          "synonyms": [
-            "Nevine",
-            "nevine"
-          ],
-          "value": "Dr.Nevine"
-        },
-        {
-          "synonyms": [
-            "Sally",
-            "sally"
-          ],
-          "value": "Dr.Sally"
-        },
-        {
-          "synonyms": [
-            "Dr.Rasha",
-            "Dr.Rasha Ismail",
-            "rasha"
-          ],
-          "value": "Rasha Ismail"
-        },
-        {
-          "synonyms": [
-            "Dr.Islam Hegazy",
-            "Islam",
-            "Dr.Islam",
-            "islam"
-          ],
-          "value": "Islam Hegazy"
-        },
-        {
-          "synonyms": [
-            "Mustafa",
-            "Dr.Mustapha Aref",
-            "Mustapha",
-            "mustafa"
-          ],
-          "value": "Mustafa Aref"
-        },
-        {
-          "synonyms": [
-            "Dr.Khaled Bahnashy",
-            "khaled"
-          ],
-          "value": "Khaled Bahnasy"
-        },
-        {
-          "synonyms": [
-            "Bassant",
-            "bassant"
-          ],
-          "value": "Dr.Bassant"
-        },
-        {
-          "synonyms": [
-            "Dr. Mohammed Youssef",
-            "mohammed youssef"
-          ],
-          "value": "Mohammed Youssef"
-        },
-        {
-          "synonyms": [
-            "Hamdy",
-            "Dr.Hamdy",
-            "Dr. Mohammed Hamdy",
-            "mohammed hamdy",
-            "hamdy"
-          ],
-          "value": "Mohammed Hamdy"
-        },
-        {
-          "synonyms": [
-            "Dr.Yasmine Afify",
-            "Dr.Yasmine",
-            "yasmine afify",
-            "yasmine"
-          ],
-          "value": "Yasmine Afify"
-        },
-        {
-          "synonyms": [
-            "Dr.Manal Tantawy",
-            "Dr.Manal",
-            "manal tantawy",
-            "manal"
-          ],
-          "value": "Manal Tantawy"
-        }
-      ],
-      "matching_strictness": 1.0,
-      "use_synonyms": true
-    },
-    "gpaVal": {
-      "automatically_extensible": false,
-      "data": [
-        {
-          "synonyms": [
-            "marks",
-            "grades",
-            "result"
-          ],
-          "value": "gpa"
-        }
-      ],
-      "matching_strictness": 1.0,
-      "use_synonyms": true
-    },
-    "snips/number": {},
-    "type": {
-      "automatically_extensible": false,
+    "ENT_doctor_name": {
+      "automatically_extensible": true,
       "data": [
         {
           "synonyms": [],
-          "value": "oral"
-        },
-        {
-          "synonyms": [],
-          "value": "practical"
-        },
-        {
-          "synonyms": [],
-          "value": "final"
-        },
-        {
-          "synonyms": [],
-          "value": "midterm"
+          "value": "safwat hamad"
         }
       ],
       "matching_strictness": 1.0,
@@ -583,141 +264,6 @@
     }
   },
   "intents": {
-    "AvalCourses": {
-      "utterances": [
-        {
-          "data": [
-            {
-              "text": "What are the "
-            },
-            {
-              "entity": "Available_SubjectsVal",
-              "slot_name": "AvailSubjects",
-              "text": "Availble Courses"
-            },
-            {
-              "text": " for this semester for "
-            },
-            {
-              "entity": "Department",
-              "slot_name": "dept",
-              "text": "Software Engineering"
-            },
-            {
-              "text": "?"
-            }
-          ]
-        },
-        {
-          "data": [
-            {
-              "text": "What are the "
-            },
-            {
-              "entity": "Available_SubjectsVal",
-              "slot_name": "AvailSubjects",
-              "text": "Availble Courses"
-            },
-            {
-              "text": " for "
-            },
-            {
-              "entity": "Year",
-              "slot_name": "yr",
-              "text": "1st year"
-            },
-            {
-              "text": " in "
-            },
-            {
-              "entity": "Department",
-              "slot_name": "dept",
-              "text": "swe"
-            },
-            {
-              "text": "?"
-            }
-          ]
-        }
-      ]
-    },
-    "Chatbot_info": {
-      "utterances": [
-        {
-          "data": [
-            {
-              "text": "Who are the users for the "
-            },
-            {
-              "entity": "Chatbot",
-              "slot_name": "Chatbot",
-              "text": "chatbot"
-            },
-            {
-              "text": "?"
-            }
-          ]
-        }
-      ]
-    },
-    "ClassLocation": {
-      "utterances": [
-        {
-          "data": [
-            {
-              "text": "where is "
-            },
-            {
-              "entity": "classLoc",
-              "slot_name": "classLoc",
-              "text": "sw lab"
-            },
-            {
-              "text": "?"
-            }
-          ]
-        },
-        {
-          "data": [
-            {
-              "text": "how to find "
-            },
-            {
-              "entity": "classLoc",
-              "slot_name": "classLoc",
-              "text": "SW Lab"
-            },
-            {
-              "text": "?"
-            }
-          ]
-        },
-        {
-          "data": [
-            {
-              "text": "i need to go to "
-            },
-            {
-              "entity": "classLoc",
-              "slot_name": "classLoc",
-              "text": "CS Lab"
-            }
-          ]
-        },
-        {
-          "data": [
-            {
-              "text": "could you tell me the location of "
-            },
-            {
-              "entity": "classLoc",
-              "slot_name": "classLoc",
-              "text": "IS Lab"
-            }
-          ]
-        }
-      ]
-    },
     "DoctorBio": {
       "utterances": [
         {
@@ -726,7 +272,7 @@
               "text": "What is the "
             },
             {
-              "entity": "DoctorBioVal",
+              "entity": "ENT_DoctorBioVal",
               "slot_name": "Doctorbio",
               "text": "biography"
             },
@@ -734,9 +280,9 @@
               "text": " of "
             },
             {
-              "entity": "doctor_name",
-              "slot_name": "doctor_name",
-              "text": "Abdelaziz Abdelhamid"
+              "entity": "ENT_doctor_name",
+              "slot_name": "doc",
+              "text": "safwat hamad"
             },
             {
               "text": " ?"
@@ -749,27 +295,12 @@
               "text": "Who is "
             },
             {
-              "entity": "doctor_name",
-              "slot_name": "doctor_name",
-              "text": "Dr.Abdelaziz"
+              "entity": "ENT_doctor_name",
+              "slot_name": "doc",
+              "text": "safwat hamad"
             },
             {
-              "text": "?"
-            }
-          ]
-        },
-        {
-          "data": [
-            {
-              "text": "Who is "
-            },
-            {
-              "entity": "doctor_name",
-              "slot_name": "doctor_name",
-              "text": "Dr. Abdelaziz Abdelhamid"
-            },
-            {
-              "text": "?"
+              "text": " ?"
             }
           ]
         },
@@ -779,32 +310,29 @@
               "text": "Tell me more about "
             },
             {
-              "entity": "doctor_name",
-              "slot_name": "doctor_name",
-              "text": "abdelaziz"
+              "entity": "ENT_doctor_name",
+              "slot_name": "doc",
+              "text": "safwat hamad"
             }
           ]
         },
         {
           "data": [
             {
-              "text": "What is the "
+              "text": "i want to know "
             },
             {
-              "entity": "DoctorBioVal",
+              "entity": "ENT_DoctorBioVal",
               "slot_name": "Doctorbio",
-              "text": "Biography"
+              "text": "biography"
             },
             {
               "text": " of "
             },
             {
-              "entity": "doctor_name",
-              "slot_name": "doctor_name",
-              "text": "Safwat Hamad"
-            },
-            {
-              "text": " ?"
+              "entity": "ENT_doctor_name",
+              "slot_name": "doc",
+              "text": "safwat hamad"
             }
           ]
         }
@@ -818,162 +346,83 @@
               "text": "where is "
             },
             {
-              "entity": "doctor_name",
+              "entity": "ENT_doctor_name",
               "slot_name": "doc",
-              "text": "Dr.Ghada"
+              "text": "safwat hamad"
             },
             {
-              "text": "'s personal office?"
-            }
-          ]
-        }
-      ]
-    },
-    "ExamsSchedule": {
-      "utterances": [
-        {
-          "data": [
-            {
-              "text": "When are the "
+              "text": " 's "
             },
             {
-              "entity": "Exam",
-              "slot_name": "Exam",
-              "text": "exam"
+              "entity": "ENT_OfficeVal",
+              "slot_name": "office",
+              "text": "personal office"
             },
             {
-              "text": "?"
+              "text": " ?"
             }
           ]
         },
         {
           "data": [
             {
-              "text": "When are the "
+              "text": "how to go to "
             },
             {
-              "entity": "type",
-              "slot_name": "type",
-              "text": "final"
+              "entity": "ENT_doctor_name",
+              "slot_name": "doc",
+              "text": "safwat hamad"
             },
             {
-              "text": "and"
+              "text": " 's "
             },
             {
-              "entity": "Exam",
-              "slot_name": "Exam",
-              "text": "Exam"
+              "entity": "ENT_OfficeVal",
+              "slot_name": "office",
+              "text": "personal office"
             },
             {
-              "text": "?"
+              "text": " ?"
             }
           ]
         },
         {
           "data": [
             {
-              "text": "What is the "
+              "text": "tell me the way to "
             },
             {
-              "entity": "Exam",
-              "slot_name": "Exam",
-              "text": "examination"
+              "entity": "ENT_doctor_name",
+              "slot_name": "doc",
+              "text": "safwat hamad"
             },
             {
-              "text": "and"
+              "text": "'s "
             },
             {
-              "entity": "TimetableVal",
-              "slot_name": "Timetable",
-              "text": "first"
-            },
-            {
-              "text": "?"
+              "entity": "ENT_OfficeVal",
+              "slot_name": "office",
+              "text": "office"
             }
           ]
         },
         {
           "data": [
             {
-              "text": "What is the "
+              "text": "i want to know the place of "
             },
             {
-              "entity": "type",
-              "slot_name": "type",
-              "text": "oral"
+              "entity": "ENT_doctor_name",
+              "slot_name": "doc",
+              "text": "safwat hamad"
             },
             {
-              "text": "and"
+              "text": "'s "
             },
             {
-              "entity": "Exam",
-              "slot_name": "Exam",
-              "text": "test"
-            },
-            {
-              "text": "and"
-            },
-            {
-              "entity": "TimetableVal",
-              "slot_name": "Timetable",
-              "text": "first"
-            },
-            {
-              "text": "?"
-            }
-          ]
-        },
-        {
-          "data": [
-            {
-              "text": "my "
-            },
-            {
-              "entity": "Exam",
-              "slot_name": "Exam",
-              "text": "exam"
-            },
-            {
-              "text": "and"
-            },
-            {
-              "entity": "TimetableVal",
-              "slot_name": "Timetable",
-              "text": "timetable"
-            },
-            {
-              "text": " please?"
-            }
-          ]
-        },
-        {
-          "data": [
-            {
-              "text": "my "
-            },
-            {
-              "entity": "type",
-              "slot_name": "type",
-              "text": "practical"
-            },
-            {
-              "text": "&"
-            },
-            {
-              "entity": "Exam",
-              "slot_name": "Exam",
-              "text": "Exam"
-            },
-            {
-              "text": "&"
-            },
-            {
-              "entity": "TimetableVal",
-              "slot_name": "Timetable",
-              "text": "schedule"
-            },
-            {
-              "text": " please?"
+              "entity": "ENT_OfficeVal",
+              "slot_name": "office",
+              "text": "place"
             }
           ]
         }
@@ -984,83 +433,80 @@
         {
           "data": [
             {
-              "text": "What is the coursework grading scheme for "
+              "text": "What is the "
             },
             {
-              "entity": "Departement",
+              "entity": "ENT_GradingSchemaVal",
+              "slot_name": "GradingSchema",
+              "text": "grading schema"
+            },
+            {
+              "text": " of "
+            },
+            {
+              "entity": "ENT_Department",
               "slot_name": "Dep",
               "text": "software engineering"
             },
             {
-              "text": " for "
+              "text": " ?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "tell me the "
             },
             {
-              "entity": "Subjects",
-              "slot_name": "Sub",
-              "text": "Cloud"
+              "entity": "ENT_GradingSchemaVal",
+              "slot_name": "GradingSchema",
+              "text": "grading schema"
             },
             {
-              "text": "?"
-            }
-          ]
-        }
-      ]
-    },
-    "NA": {
-      "utterances": [
-        {
-          "data": [
+              "text": " of "
+            },
             {
-              "text": "What is my rank among my colleagues?"
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "software engineering"
             }
           ]
         },
         {
           "data": [
             {
-              "text": "What are the electives this semester?"
+              "text": "i want to know "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "sw"
+            },
+            {
+              "entity": "ENT_GradingSchemaVal",
+              "slot_name": "GradingSchema",
+              "text": "grading schema"
             }
           ]
         },
         {
           "data": [
             {
-              "text": "Can i submit assignment online?"
-            }
-          ]
-        },
-        {
-          "data": [
+              "text": "what is "
+            },
             {
-              "text": "What is the timetable of seminar ?"
-            }
-          ]
-        },
-        {
-          "data": [
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "software engineering"
+            },
             {
-              "text": "Can i postponed an exam?"
-            }
-          ]
-        },
-        {
-          "data": [
+              "text": "'s "
+            },
             {
-              "text": "How can I get financial aid?"
-            }
-          ]
-        },
-        {
-          "data": [
-            {
-              "text": "Does the university offer studying a semester abroad?"
-            }
-          ]
-        },
-        {
-          "data": [
-            {
-              "text": "What should i do if i have a problem regarding my degree?"
+              "entity": "ENT_GradingSchemaVal",
+              "slot_name": "GradingSchema",
+              "text": "grading schema"
             }
           ]
         }
@@ -1074,20 +520,40 @@
               "text": "what are the "
             },
             {
-              "entity": "OfficeHoursVal",
-              "slot_name": "Officehours",
-              "text": "Office Hours"
+              "entity": "ENT_OfficeHoursVal",
+              "slot_name": "officehours",
+              "text": "office hours"
             },
             {
-              "text": " for "
+              "text": " of "
             },
             {
-              "entity": "doctor_name",
-              "slot_name": "Name",
-              "text": "Abdelaziz"
+              "entity": "ENT_doctor_name",
+              "slot_name": "doc",
+              "text": "safwat hamad"
             },
             {
               "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "i want to know the "
+            },
+            {
+              "entity": "ENT_OfficeHoursVal",
+              "slot_name": "officehours",
+              "text": "office hours"
+            },
+            {
+              "text": " of "
+            },
+            {
+              "entity": "ENT_doctor_name",
+              "slot_name": "doc",
+              "text": "safwat hamad"
             }
           ]
         },
@@ -1097,151 +563,37 @@
               "text": "when is "
             },
             {
-              "entity": "doctor_name",
-              "slot_name": "Name",
-              "text": "Abdelaziz"
+              "entity": "ENT_doctor_name",
+              "slot_name": "doc",
+              "text": "safwat hamad"
             },
             {
-              "text": " become available?"
-            }
-          ]
-        }
-      ]
-    },
-    "Papers": {
-      "utterances": [
-        {
-          "data": [
-            {
-              "text": "What are the "
+              "entity": "ENT_OfficeHoursVal",
+              "slot_name": "officehours",
+              "text": "available"
             },
             {
-              "entity": "DocumentVal",
-              "slot_name": "paper",
-              "text": "paper"
-            },
-            {
-              "text": " needed for "
-            },
-            {
-              "entity": "PaperType",
-              "slot_name": "type",
-              "text": "submission"
-            },
-            {
-              "text": "?"
+              "text": " ?"
             }
           ]
         },
         {
           "data": [
             {
-              "text": "How can i get a "
+              "text": "tell me the "
             },
             {
-              "entity": "PaperType",
-              "slot_name": "type",
-              "text": "submission"
-            },
-            {
-              "text": "?"
-            }
-          ]
-        }
-      ]
-    },
-    "Prerequisites": {
-      "utterances": [
-        {
-          "data": [
-            {
-              "text": "What are the "
-            },
-            {
-              "entity": "PrerquisitesVal",
-              "slot_name": "Prerequisites",
-              "text": "Prerequisites"
+              "entity": "ENT_OfficeHoursVal",
+              "slot_name": "officehours",
+              "text": "free"
             },
             {
               "text": " of "
             },
             {
-              "entity": "Subjects",
-              "slot_name": "subject",
-              "text": "UI"
-            },
-            {
-              "text": " for "
-            },
-            {
-              "entity": "Department",
-              "slot_name": "dept",
-              "text": "sw"
-            },
-            {
-              "text": " (Software Engineering)?"
-            }
-          ]
-        },
-        {
-          "data": [
-            {
-              "text": "What will be the "
-            },
-            {
-              "entity": "PrerquisitesVal",
-              "slot_name": "Prerequisites",
-              "text": "Prerequesites"
-            },
-            {
-              "text": " on passing "
-            },
-            {
-              "entity": "Subjects",
-              "slot_name": "subject",
-              "text": "Web Engineering"
-            },
-            {
-              "text": "?"
-            }
-          ]
-        }
-      ]
-    },
-    "ReqCourseDescription": {
-      "utterances": [
-        {
-          "data": [
-            {
-              "text": "I want "
-            },
-            {
-              "entity": "CourseDescriptionVal",
-              "slot_name": "course",
-              "text": "course information"
-            },
-            {
-              "text": " about "
-            },
-            {
-              "entity": "CourseName",
-              "slot_name": "name",
-              "text": "operating system"
-            }
-          ]
-        },
-        {
-          "data": [
-            {
-              "text": "What do i learn in each "
-            },
-            {
-              "entity": "CourseDescriptionVal",
-              "slot_name": "course",
-              "text": "course information"
-            },
-            {
-              "text": " ?"
+              "entity": "ENT_doctor_name",
+              "slot_name": "doc",
+              "text": "safwat hamad"
             }
           ]
         }
@@ -1252,38 +604,10 @@
         {
           "data": [
             {
-              "text": "How much is the "
-            },
-            {
-              "entity": "Year",
-              "slot_name": "Year",
-              "text": "first year"
-            },
-            {
-              "entity": "ReqPaymentVal",
-              "slot_name": "Fees",
-              "text": "Fees"
-            },
-            {
-              "text": " for "
-            },
-            {
-              "entity": "Department",
-              "slot_name": "Dep",
-              "text": "software engineering"
-            },
-            {
-              "text": " (software engineering) ?"
-            }
-          ]
-        },
-        {
-          "data": [
-            {
               "text": "what is the "
             },
             {
-              "entity": "ReqPaymentVal",
+              "entity": "ENT_ReqPaymentVal",
               "slot_name": "Fees",
               "text": "Fees"
             },
@@ -1291,9 +615,17 @@
               "text": " for the "
             },
             {
-              "entity": "Year",
-              "slot_name": "Year",
+              "entity": "ENT_Year",
+              "slot_name": "year",
               "text": "first year"
+            },
+            {
+              "text": " of "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "software engineering"
             },
             {
               "text": "?"
@@ -1306,12 +638,84 @@
               "text": "How much are the "
             },
             {
-              "entity": "ReqPaymentVal",
+              "entity": "ENT_ReqPaymentVal",
               "slot_name": "Fees",
-              "text": "Fees"
+              "text": "fees"
+            },
+            {
+              "text": " for the "
+            },
+            {
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "year 1"
+            },
+            {
+              "text": " of "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "bio"
             },
             {
               "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "i want to know the "
+            },
+            {
+              "entity": "ENT_ReqPaymentVal",
+              "slot_name": "Fees",
+              "text": "money"
+            },
+            {
+              "text": " of "
+            },
+            {
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "second year"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "general"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "tell me the "
+            },
+            {
+              "entity": "ENT_ReqPaymentVal",
+              "slot_name": "Fees",
+              "text": "price"
+            },
+            {
+              "text": " of "
+            },
+            {
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "2nd year"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "mainstream"
             }
           ]
         }
@@ -1322,316 +726,87 @@
         {
           "data": [
             {
-              "text": "When will the grades of the "
+              "text": "When is the "
             },
             {
-              "entity": "Semester",
-              "slot_name": "Time",
-              "text": "Semester one"
+              "entity": "ENT_ResultVal",
+              "slot_name": "result",
+              "text": "result"
             },
             {
-              "text": " will be out?"
+              "text": " time of "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "swe"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "first year"
+            },
+            {
+              "text": " ?"
             }
           ]
         },
         {
           "data": [
             {
-              "text": "When is the "
+              "text": "i want to know the time of "
             },
             {
-              "entity": "Semester",
-              "slot_name": "Time",
-              "text": "first semester"
-            },
-            {
-              "text": " result ?"
-            }
-          ]
-        }
-      ]
-    },
-    "ReqSchedule": {
-      "utterances": [
-        {
-          "data": [
-            {
-              "text": "What is the "
-            },
-            {
-              "entity": "TimetableVal",
-              "slot_name": "Schedule",
-              "text": "Schedule"
+              "entity": "ENT_ResultVal",
+              "slot_name": "result",
+              "text": "grades"
             },
             {
               "text": " for "
             },
             {
-              "entity": "Department",
-              "slot_name": "dept",
-              "text": "software engineering"
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "sw"
             },
             {
               "text": " in "
             },
             {
-              "entity": "Year",
-              "slot_name": "yr",
-              "text": "year 1"
-            },
-            {
-              "text": " ?"
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "1st year"
             }
           ]
         },
         {
           "data": [
             {
-              "text": "where is my course's "
+              "text": "tell me the time for "
             },
             {
-              "entity": "TimetableVal",
-              "slot_name": "Schedule",
-              "text": "timetable"
+              "entity": "ENT_ResultVal",
+              "slot_name": "result",
+              "text": "result"
             },
             {
-              "text": "?"
-            }
-          ]
-        },
-        {
-          "data": [
-            {
-              "text": "What is my "
+              "text": " in "
             },
             {
-              "entity": "TimetableVal",
-              "slot_name": "Schedule",
-              "text": "schedule"
-            },
-            {
-              "text": " for this term?"
-            }
-          ]
-        },
-        {
-          "data": [
-            {
-              "text": "when does "
-            },
-            {
-              "entity": "TimetableVal",
-              "slot_name": "Schedule",
-              "text": "time"
-            },
-            {
-              "text": " start?"
-            }
-          ]
-        },
-        {
-          "data": [
-            {
-              "text": "In which lecture "
-            },
-            {
-              "entity": "TimetableVal",
-              "slot_name": "Schedule",
-              "text": "hall"
-            },
-            {
-              "text": " does my next lecture take place?"
-            }
-          ]
-        },
-        {
-          "data": [
-            {
-              "text": "At what "
-            },
-            {
-              "entity": "TimetableVal",
-              "slot_name": "Schedule",
-              "text": "class location"
-            },
-            {
-              "text": " is my next lecture?"
-            }
-          ]
-        },
-        {
-          "data": [
-            {
-              "text": "What is the "
-            },
-            {
-              "entity": "TimetableVal",
-              "slot_name": "Schedule",
-              "text": "course"
-            },
-            {
-              "text": " for "
-            },
-            {
-              "entity": "Year",
-              "slot_name": "yr",
-              "text": "first year"
-            },
-            {
-              "text": " and "
-            },
-            {
-              "entity": "Department",
-              "slot_name": "dept",
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
               "text": "bioinformatics"
             },
             {
-              "text": "?"
-            }
-          ]
-        },
-        {
-          "data": [
-            {
-              "text": "What is the lab where os "
+              "text": " of "
             },
             {
-              "entity": "TimetableVal",
-              "slot_name": "Schedule",
-              "text": "lecture"
-            },
-            {
-              "text": " is given?"
-            }
-          ]
-        },
-        {
-          "data": [
-            {
-              "text": "Who teaches compilers "
-            },
-            {
-              "entity": "TimetableVal",
-              "slot_name": "Schedule",
-              "text": "course name"
-            },
-            {
-              "text": " for section 15?"
-            }
-          ]
-        },
-        {
-          "data": [
-            {
-              "text": "who are my doctors/TA for "
-            },
-            {
-              "entity": "TimetableVal",
-              "slot_name": "Schedule",
-              "text": "Schedule"
-            },
-            {
-              "text": "?"
-            }
-          ]
-        }
-      ]
-    },
-    "Service": {
-      "utterances": [
-        {
-          "data": [
-            {
-              "text": "where is the college's "
-            },
-            {
-              "entity": "ServiceType",
-              "slot_name": "service",
-              "text": "buffet"
-            },
-            {
-              "text": " ?"
-            }
-          ]
-        }
-      ]
-    },
-    "requestGPA": {
-      "utterances": [
-        {
-          "data": [
-            {
-              "text": "what is my "
-            },
-            {
-              "entity": "gpaVal",
-              "slot_name": "gpa",
-              "text": "gpa"
-            },
-            {
-              "entity": "snips/number",
-              "slot_name": "ID",
-              "text": "2001"
-            },
-            {
-              "text": " ?"
-            }
-          ]
-        },
-        {
-          "data": [
-            {
-              "text": "give me my "
-            },
-            {
-              "entity": "gpaVal",
-              "slot_name": "gpa",
-              "text": "gpa"
-            },
-            {
-              "text": " please "
-            },
-            {
-              "entity": "snips/number",
-              "slot_name": "ID",
-              "text": "twenty one"
-            }
-          ]
-        },
-        {
-          "data": [
-            {
-              "text": "i want to know my "
-            },
-            {
-              "entity": "gpaVal",
-              "slot_name": "gpa",
-              "text": "gpa"
-            },
-            {
-              "entity": "snips/number",
-              "slot_name": "ID",
-              "text": "three hundred and four"
-            }
-          ]
-        },
-        {
-          "data": [
-            {
-              "text": "could you tell me my "
-            },
-            {
-              "entity": "gpaVal",
-              "slot_name": "gpa",
-              "text": "gpa"
-            },
-            {
-              "entity": "snips/number",
-              "slot_name": "ID",
-              "text": "2001"
-            },
-            {
-              "text": "?"
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "year one"
             }
           ]
         }

@@ -4,40 +4,44 @@ type: intent
 name: DoctorBio
 slots:
    - name: Doctorbio
-     entity: DoctorBioVal
-   - name: Doctor_Name
-     entity: DoctorName
-#   - name: Course
-#     entity: Subjects
+     entity: ENT_DoctorBioVal
+   - name: doc
+     entity: ENT_doctor_name
 utterances:
-   - What is the [Doctorbio](biography) of [doctor_name] ?
-   - Who is [doctor_name]?
-   - Who is [doctor_name]?
-   - Tell me more about [doctor_name]
-   - What is the [Doctorbio] of [doctor_name] ?
-#   - Information about [Course](UI) [doctor_name] ?
+   - What is the [Doctorbio](biography) of [doc](safwat hamad) ?
+   - Who is [doc] ?
+   - Tell me more about [doc]
+   - i want to know [Doctorbio] of [doc]
+
 # Grading Schema Intent
 ---
 type: intent
 name: GradingFormat
 slots:
-   - name: Sub
-     entity: Subjects
+   - name: GradingSchema
+     entity: ENT_GradingSchemaVal
    - name: Dep
-     entity: Departement
+     entity: ENT_Department
 utterances:
-   - What is the coursework grading scheme for [Dep](software engineering) for [Sub](Cloud)?
-
+   - What is the [GradingSchema](grading schema) of [Dep](software engineering) ?
+   - tell me the [GradingSchema] of [Dep](software engineering)
+   - i want to know [Dep](sw) [GradingSchema]
+   - what is [Dep]'s [GradingSchema]
 
 # Office location Intent
 ---
 type: intent
 name: DoctorOffice
 slots:
+   - name: office
+     entity: ENT_OfficeVal
    - name: doc
-     entity: doctor_name
+     entity: ENT_doctor_name
 utterances:
-   - where is [doc](Dr.Ghada)'s personal office?
+   - where is [doc](safwat hamad) 's [office](personal office) ?
+   - how to go to [doc] 's [office] ?
+   - tell me the way to [doc]'s [office]
+   - i want to know the place of [doc]'s [office]
 
 
 # OfficeHours Intent
@@ -45,36 +49,32 @@ utterances:
 type: intent
 name: OfficeHours
 slots:
-   - name: Officehours
-     entity: OfficeHoursVal
-   - name: Name
-     entity: doctor_name
+   - name: officehours
+     entity: ENT_OfficeHoursVal
+   - name: doc
+     entity: ENT_doctor_name
 utterances:
-   - what are the [Officehours](Office Hours) for [Name](Abdelaziz)?
-   - when is [Name](Abdelaziz) become available?
-
-# Chatbot Intent
----
-type: intent
-name: Chatbot_info
-slots:
-   - name: Chatbot
-     entity: Chatbot
-utterances:
-   - Who are the users for the [Chatbot](chatbot)?
-
+   - what are the [officehours](office hours) of [doc](safwat hamad)?
+   - i want to know the [officehours] of [doc]
+   - when is [doc](safwat hamad) [officehours] ?
+   - tell me the [officehours] of [doc]
 
 # ReqResultTime Intent
 ---
 type: intent
 name: ReqResultTime
 slots:
-   - name: Time
-     entity: Semester
+   - name: Dep
+     entity: ENT_Department
+   - name: year
+     entity: ENT_Year
+   - name: result
+     entity: ENT_ResultVal
 
 utterances:
-   - When will the grades of the [Time](Semester one) will be out?
-   - When is the [Time] result ?
+   - When is the [result] time of [Dep] for [year] ?
+   - i want to know the time of [result] for [Dep] in [year]
+   - tell me the time for [result] in [Dep] of [year]
 
 
 # ReqPayment Intent
@@ -83,262 +83,106 @@ type: intent
 name: ReqPayment
 slots:
    - name: Fees
-     entity: ReqPaymentVal
+     entity: ENT_ReqPaymentVal
    - name: Dep
-     entity: Department
-   - name: Year
-     entity: Year
+     entity: ENT_Department
+   - name: year
+     entity: ENT_Year
 utterances:
-   - How much is the [Year](first year) [Fees](Fees) for [Dep] (software engineering) ?
-   - what is the [Fees](Fees) for the [Year](first year)?
-   - How much are the [Fees]?
-
-#AvalCourses
----
-type: intent
-name: AvalCourses
-slots:
-    - name: AvailSubjects
-      entity: Available_SubjectsVal
-    - name: dept
-      entity: Department
-    - name: yr
-      entity: Year
-utterances:
-    - What are the [AvailSubjects](Availble Courses) for this semester for [dept](Software Engineering)?
-    - What are the [AvailSubjects] for [yr](1st year) in [dept]?
+   - what is the [Fees](Fees) for the [year](first year) of [Dep](software engineering)?
+   - How much are the [Fees] for the [year] of [Dep]?
+   - i want to know the [Fees] of [year] for [Dep]
+   - tell me the [Fees] of [year] for [Dep]
 
 
 
 
-#Prerequisits
----
-type: intent
-name: Prerequisites
-slots:
-    - name: Prerequisites
-      entity: PrerquisitesVal
-    - name: dept
-      entity: Department
-    - name: subject
-      entity: Subjects
-utterances:
-    - What are the [Prerequisites](Prerequisites) of [subject](UI) for [dept] (Software Engineering)?
-    - What will be the [Prerequisites] on passing [subject]?
 
-
-
-# requestGPA intent
----
-type: intent
-name: requestGPA
-slots:
-   - name: gpa
-     entity: gpaVal
-
-   - name: ID
-     entity: snips/number
-
-utterances:
-   - what is my [gpa](gpa)[ID] ?
-   - give me my [gpa] please [ID]
-   - i want to know my [gpa](gpa)[ID]
-   - could you tell me my [gpa](gpa)[ID]?
-
-# NA intent
----
-type: intent
-name: NA
-utterances:
-  - What is my rank among my colleagues?
-  - What are the electives this semester?
-  - Can i submit assignment online?
-  - What is the timetable of seminar ?
-  - Can i postponed an exam?
-  - How can I get financial aid?
-  - Does the university offer studying a semester abroad?
-  - What should i do if i have a problem regarding my degree?
-
-# ReqSchedule intent
----
-type: intent
-name: ReqSchedule
-slots:
-  - name: Schedule
-    entity: TimetableVal
-
-  - name: dept
-    entity: Department
-
-  - name: yr
-    entity: Year
-
-utterances:
-  - What is the [Schedule](Schedule) for [dept](software engineering) in [yr](year 1) ?
-  - where is my course's [Schedule]?
-  - What is my [Schedule] for this term?
-  - when does [Schedule] start?
-  - In which lecture [Schedule] does my next lecture take place?
-  - At what [Schedule] is my next lecture?
-  - What is the [Schedule] for [yr] and [dept]?
-  - What is the lab where os [Schedule] is given?
-  - Who teaches compilers [Schedule] for section 15?
-  - who are my doctors/TA for [Schedule]?
-
-# Service intent
----
-type: intent
-name: Service
-slots:
- - name: service
-   entity: ServiceType
-utterances:
-- where is the college's [service](buffet) ?
-
-# Papers intent
----
-type: intent
-name: Papers
-slots:
- - name : paper
-   entity : DocumentVal
- - name: type
-   entity: PaperType
-utterances:
-- What are the [paper](paper) needed for [type](submission)?
-- How can i get a [type]?
-
-# ReqCourseDescription intent
----
-type: intent
-name: ReqCourseDescription
-slots:
- - name: course
-   entity: CourseDescriptionVal
- - name: name
-   entity: CourseName
-utterances:
-- I want [course](course information) about [name](operating system)
-- What do i learn in each [course] ?
-
-# ClassLocation intent
----
-type: intent
-name: ClassLocation
-slots:
-   - name: classLoc
-     entity: classLoc
-utterances:
-    - where is [classLoc](sw lab)?
-    - how to find [classLoc]?
-    - i need to go to [classLoc]
-    - could you tell me the location of [classLoc]
-
-# ExamsSchedule intent
----
-type: intent
-name: ExamsSchedule
-slots:
-   - name: Exam
-     entity: Exam
-   - name: Timetable
-     entity: TimetableVal
-   - name: type
-     entity: type
-utterances:
-    - When are the [Exam](exam)?
-    - When are the [type](final)and[Exam]?
-    - What is the [Exam]and[Timetable](first)?
-    - What is the [type]and[Exam]and[Timetable]?
-    - my [Exam]and[Timetable] please?
-    - my [type]&[Exam]&[Timetable] please?
-
-# classLoc entity
+#OfficeHours Entity
 ---
 type: entity
-name: classLoc
+name: ENT_DoctorBioVal
 automatically_extensible: no
 values:
-- [SW Lab, CS Lab, IS Lab]
+- [biography,profile,life story,life history]
 
-
-#Exam entity
+#ReqPaymentVal entity
 ---
 type: entity
-name: Exam
+name: ENT_ReqPaymentVal
 automatically_extensible: no
 values:
-    - [Exam, examination, test]
-
-
-# type entity
----
-type: entity
-name: type
-automatically_extensible: no
-values:
-   - oral
-   - practical
-   - final
-   - midterm
-
-# CourseDescriptionVal entity
----
-type: entity
-name: CourseDescriptionVal
-automatically_extensible: no
-values:
-- [course information, course description, course details ,course]
-
-# CourseName entity
----
-type: entity
-name: CourseName
-automatically_extensible: no
-values:
-- operating system
-
-
-# DocumentVal entity
----
-type: entity
-name : DocumentVal
-automatically_extensible: no
-values:
-- [paper , papers]
-
-# PaperType entity
----
-type: entity
-name: PaperType
-automatically_extensible: no
-values:
-- [submission, admission]
-- certificate of registration
-
-# ServiceType entity
----
-type: entity
-name: ServiceType
-automatically_extensible: no
-values:
-- buffet
-- [technician, it]
+- [fees, money, price, payment, tuition fees, bill]
 
 # Year entity
 ---
 type: entity
-name: Year
+name: ENT_Year
 values:
 - [first year, 1st year, year one, year 1]
 - [second year , 2nd year , year second , year 2]
 - [third year , 3rd year , year third , year 3]
 - [fourth year , 4th year , year fourth , year 4 , senior, final year]
 
+# Time entity
+---
+type: entity
+name: ENT_Semester
+automatically_extensible: no
+values:
+- [ first semester, 1st semester , semester one, semester 1]
+- [ second semester, 2nd semester , semester two, semester 2]
+- [ third semester, 3rd semester , semester three, semester 3]
+- [ fourth semester, 4th semester , semester four, semester 4]
+- [ fifth semester, 5th semester , semester five, semester 5]
+- [ sixth semester, 6th semester , semester six, semester 6]
+- [ seventh semester, 7th semester , semester seven, semester 7]
+- [ eighth semester, 8th semester , semester eight, semester 8]
+
+#gradingSchema Entity
+---
+type: entity
+name: ENT_GradingSchemaVal
+automatically_extensible: no
+values:
+- grading schema
+
+#Result Entity
+---
+type: entity
+name: ENT_ResultVal
+automatically_extensible: no
+values:
+- [result,grades]
+
+#OfficeHours Entity
+---
+type: entity
+name: ENT_OfficeHoursVal
+automatically_extensible: no
+values:
+- [office hours, available, free]
+
+#Office Entity
+---
+type: entity
+name: ENT_OfficeVal
+automatically_extensible: no
+values:
+- [personal office,office, place, work place]
+
+# Doctor_Name entity
+---
+type: entity
+name: ENT_doctor_name
+automatically_extensible: yes
+values:
+- [safwat hamad]
+
 # Department entity
 ---
 type: entity
-name: Department
+name: ENT_Department
 automatically_extensible: no
 values:
 - [software engineering, swe, sw]
@@ -349,126 +193,3 @@ values:
 - [computer science, cs]
 - [artificial Intelligence, ai]
 - cyber Security
-
-
-# TimetableVal entity
----
-type: entity
-name: TimetableVal
-automatically_extensible: no
-values:
-- [timetable, schedule, time]
-- [hall, class location]
-- [course , lecture]
-- course name
-
-#PrequisitesVal Entity
----
-type: entity
-name: PrerquisitesVal
-automatically_extensible: no
-values:
-- [Prerequesites, Available subjects, Requirements]
-
-
-# gpa entity
----
-type: entity
-name: gpaVal
-automatically_extensible: no
-values:
-- [gpa, marks, grades , result]
-
-# Available_Subjects entity
----
-type: entity
-name: Availble_SubjectsVal
-autmatically_extensible: no
-values:
-- [Availble Courses, Availble Subjects]
-
-# Fees entity
----
-type: entity
-name: ReqPaymentVal
-automatically_extensible: no
-values:
-- [Fees, Money, Price, Payment, Tuition]
-
-# Time entity
----
-type: entity
-name: Semester
-automatically_extensible: no
-values:
-- [ first semester, 1st semester , semester one]
-- [ second semester, 2nd semester , semester two]
-- [ third semester, 3rd semester , semester three]
-- [ fourth semester, 4th semester , semester four]
-- [ fifth semester, 5th semester , semester five]
-- [ sixth semester, 6th semester , semester six]
-- [ seventh semester, 7th semester , semester seven]
-- [ eighth semester, 8th semester , semester eight]
-
-# Doctor_Name entity
----
-type: entity
-name: doctor_name
-automatically_extensible: no
-values:
-- [Abdelaziz Abdelhamid, Dr.Abdelaziz, Dr. Abdelaziz Abdelhamid,abdelaziz]
-- [Safwat Hamad, Dr.Safwat, Dr.Safwat Hamad, safwat]
-- [Ghada, Dr.Ghada, ghada]
-- [Dr.Nevine, Nevine, nevine]
-- [Dr.Sally, Sally, sally]
-- [Rasha Ismail, Dr.Rasha, Dr.Rasha Ismail, rasha]
-- [Islam Hegazy, Dr.Islam Hegazy, Islam, Dr.Islam, islam]
-- [Mustafa Aref, Mustafa, Dr.Mustapha Aref, Mustapha, mustafa]
-- [Khaled Bahnasy, Dr.Khaled Bahnashy, khaled]
-- [Dr.Bassant,Bassant, bassant]
-- [Mohammed Youssef, Dr. Mohammed Youssef, mohammed youssef]
-- [Mohammed Hamdy, Hamdy, Dr.Hamdy, Dr. Mohammed Hamdy, mohammed hamdy, hamdy]
-- [Yasmine Afify, Dr.Yasmine Afify, Dr.Yasmine, yasmine afify, yasmine]
-- [Manal Tantawy, Dr.Manal Tantawy, Dr.Manal, manal tantawy, manal]
-
-# gpa entity
----
-type: entity
-name: Chatbot
-automatically_extensible: no
-values:
-- [Chatbot, chatbot]
-
-#OfficeHours Entity
----
-type: entity
-name: OfficeHoursVal
-automatically_extensible: no
-values:
-- [Office Hours]
-
-#Subjects Entity
----
-type: entity
-name: Subjects
-automatically_extensible: no
-values:
-- [Web Engineering, WE, Web, Web ENG]
-- [Big Data, BG, Big]
-- [User Interface Design, UI, User Interface]
-- [Components-based programming, Components, Component]
-- [Cloud Computing, Cloud]
-
-
-
-
-#OfficeHours Entity
----
-type: entity
-name: DoctorBioVal
-automatically_extensible: no
-values:
-- [Biography, biography]
-
-
-

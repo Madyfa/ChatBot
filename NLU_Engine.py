@@ -1,15 +1,14 @@
 import io
 import json
 import re
-
-import snips_nlu_en
+# import pandas as pd
+# import snips_nlu_en
 from snips_nlu import SnipsNLUEngine, load_resources
 from snips_nlu.default_configs import CONFIG_EN
+# from googletrans import Translator
 
 from DBConnection import Database
 from DB_Interaction import interaction
-
-
 
 class NLU:
     __connection = Database()
@@ -17,6 +16,15 @@ class NLU:
     __answers = {
             "NA": "Please Ask your department administrator for this"
         }
+    # def __Translate_Text (question,x='en'):
+    #     translator = Translator()
+    #     translated = translator.        translate(question , dest=x)
+    #     print("Source Language : " + translated.src)
+    #     print("Destination Language : " + translated.dest)
+    #     print("Origin Text : " + translated.origin)
+    #     print("Translated Text : " + translated.text)
+    #     return translated.text
+
     def __int__(self):
         self._query = ''
         self.__result = ''
@@ -26,6 +34,7 @@ class NLU:
         self.__engine=''
         self.__dataset=''
         self.__nluSlots=''
+        self.language=''
 
     def EngineMode(self, mode):
         """
@@ -57,6 +66,7 @@ class NLU:
 
 
     def setQuery(self, query):
+        # self._query , self.language = query
         self._query = query
         self.__excute()
 
@@ -64,7 +74,7 @@ class NLU:
 
     def __excute(self):
         parsing = self.__engine.parse(self._query)
-        self.__result = json.loads(json.dumps(parsing,indent=1))
+        self.__result = json.loads(json.dumps(parsing,indent=2))
         print( self.__result )
 
     def _getIntent(self):
@@ -86,9 +96,9 @@ class NLU:
             for x in range(len(self.__result['slots'])):
                 if not re.search("Val",self.__result['slots'][x]['entity']):
                     if str(self.__result['slots'][x]['entity']).__contains__("snips"):
-                        dic[self.__result['slots'][x]['slotName']] = self.__result['slots'][x]['rawValue']
+                        dic[self.__result['slots'][x]['slotName']] = self.__result['slots'][x]['value']['value']
                     else:
-                        dic[self.__result['slots'][x]['entity']] = self.__result['slots'][x]['rawValue']
+                        dic[self.__result['slots'][x]['entity']] = self.__result['slots'][x]['value']['value']
         else:
             return "No Slots"
 
@@ -113,7 +123,10 @@ class NLU:
         
 
         if self.checkIntent():
-            self.return_original()
+            # if str(self.CheckJsonEntities()).__contains__("Has No Entities"):
+            #     print("Chatbot : Get Answer From Json Answers")
+            # else:
+                self.return_original()
         else:
             print('ChatBot : not available due to intent')
 
@@ -122,7 +135,6 @@ class NLU:
         if str(self.__nluSlots).__contains__("No Slots") :
             return "No"
         datasetSlots = []
-        print(self._getIntent())
         for i in range(len(self.__dataset['intents'][self._getIntent()]['utterances'])):
             for j in range(len(self.__dataset['intents'][self._getIntent()]['utterances'][i]['data'])):
                 check = json.dumps(self.__dataset['intents'][self._getIntent()]['utterances'][i]['data'][j])
@@ -144,7 +156,7 @@ class NLU:
                     break
             if not found:
                 ret.append(datasetSlots[i])
-        print("Slots Not Available in Question : ", ret)  # el mafroud btalla3 el slots ely el mafroud tb2a mwgooda
+        print("Slots Not Available in Question : ", ret)  # el mafroud btalla3 el slots ely mesh mwgooda
         return ret
 
 
@@ -160,8 +172,10 @@ class NLU:
             loopflagi = False
             while not loopflagi:
 
-                print("Chatbot: Please Enter", slots_missing[i])
-
+                chatbotques = "Please Enter "+slots_missing[i]
+                # g = Translator().translate(chatbotques , dest = self.language).text
+                # print("Chatbot: ",g)
+                print ("Chatbot : ",chatbotques)
                 if slots_missing[i] == "ID":
                     try:
                         reply = int(input("User: "))
@@ -169,6 +183,9 @@ class NLU:
                         print("Chatbot: Please Enter a valid ID")
                         continue
                 else:
+                    print("Chatbot: Possible Values for", slots_missing[i], "are:")
+                    for k in range(len(self.__dataset['entities'][slots_missing[i]]['data'])):
+                         print(self.__dataset['entities'][slots_missing[i]]['data'][k]['value'])
                     reply = input("User: ")
 
                 if reply == 'q':
@@ -176,9 +193,10 @@ class NLU:
                 if str(slots_missing[i]).__contains__("ID"):
                     self.__nluSlots[slots_missing[i]] = reply
                     break
-                for j in range(len(self.__dataset['entities'][slots_missing[i]])):
+                for j in range(len(self.__dataset['entities'][slots_missing[i]]['data'])):
                     try:
                         check = json.dumps(self.__dataset['entities'][slots_missing[i]]['data'][j])
+                        print(check)
                     except:
                         continue
                     if reply in check:
@@ -218,3 +236,22 @@ class NLU:
 
         print("Values to get from Database" , self.__nluSlots)  # original values of entities used in question
         # return List or dictionary??
+
+
+
+    # def CheckJsonEntities(self):
+    #      for i in range(len(self.__dataset['intents'][self._getIntent()]['utterances'])):
+    #             for j in range(len(self.__dataset['intents'][self._getIntent()]['utterances'][i]['data'])):
+    #                 check = json.dumps(self.__dataset['intents'][self._getIntent()]['utterances'][i]['data'][j])
+    #                 # print(check)
+    #                 if 'entity' in check:
+    #                     # print("Entities")
+    #                     return "Has Entities"
+    #
+    #             # print("-----------")
+    #      # print("Exit with No Entities")
+    #      if self._getProbability() >= 0.5:
+    #          return "Has No Entities"
+    #      else:
+    #          return "Has Entities"
+
