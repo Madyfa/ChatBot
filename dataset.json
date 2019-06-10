@@ -44,11 +44,11 @@
           "synonyms": [
             "ai"
           ],
-          "value": "artificial Intelligence"
+          "value": "artificial intelligence"
         },
         {
           "synonyms": [],
-          "value": "cyber Security"
+          "value": "cyber security"
         }
       ],
       "matching_strictness": 1.0,
@@ -612,20 +612,20 @@
               "text": "Fees"
             },
             {
-              "text": " for the "
+              "text": " for "
             },
             {
-              "entity": "ENT_Year",
-              "slot_name": "year",
-              "text": "first year"
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "bio"
             },
             {
               "text": " of "
             },
             {
-              "entity": "ENT_Department",
-              "slot_name": "Dep",
-              "text": "software engineering"
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "year 1"
             },
             {
               "text": "?"
@@ -648,7 +648,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "year 1"
+              "text": "second year"
             },
             {
               "text": " of "
@@ -656,10 +656,7 @@
             {
               "entity": "ENT_Department",
               "slot_name": "Dep",
-              "text": "bio"
-            },
-            {
-              "text": "?"
+              "text": "general"
             }
           ]
         },
@@ -674,27 +671,27 @@
               "text": "money"
             },
             {
-              "text": " of "
-            },
-            {
-              "entity": "ENT_Year",
-              "slot_name": "year",
-              "text": "second year"
-            },
-            {
-              "text": " for "
+              "text": " for the "
             },
             {
               "entity": "ENT_Department",
               "slot_name": "Dep",
-              "text": "general"
+              "text": "mainstream"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "2nd year"
             }
           ]
         },
         {
           "data": [
             {
-              "text": "tell me the "
+              "text": "tell me "
             },
             {
               "entity": "ENT_ReqPaymentVal",
@@ -702,20 +699,20 @@
               "text": "price"
             },
             {
-              "text": " of "
+              "text": " in "
             },
             {
-              "entity": "ENT_Year",
-              "slot_name": "year",
-              "text": "2nd year"
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "scientific computing"
             },
             {
               "text": " for "
             },
             {
-              "entity": "ENT_Department",
-              "slot_name": "Dep",
-              "text": "mainstream"
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "year second"
             }
           ]
         }

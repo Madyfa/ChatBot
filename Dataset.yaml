@@ -89,13 +89,10 @@ slots:
    - name: year
      entity: ENT_Year
 utterances:
-   - what is the [Fees](Fees) for the [year](first year) of [Dep](software engineering)?
-   - How much are the [Fees] for the [year] of [Dep]?
-   - i want to know the [Fees] of [year] for [Dep]
-   - tell me the [Fees] of [year] for [Dep]
-
-
-
+   - what is the [Fees](Fees) for [Dep] of [year]?
+   - How much are the [Fees] for the [year] of [Dep]
+   - i want to know the [Fees] for the [Dep] in [year]
+   - tell me [Fees] in [Dep] for [year]
 
 
 #OfficeHours Entity
@@ -153,7 +150,7 @@ type: entity
 name: ENT_ResultVal
 automatically_extensible: no
 values:
-- [result,grades]
+- [result, grades]
 
 #OfficeHours Entity
 ---
@@ -191,5 +188,5 @@ values:
 - [scientific computing, sc]
 - [information system, is]
 - [computer science, cs]
-- [artificial Intelligence, ai]
-- cyber Security
+- [artificial intelligence, ai]
+- cyber security
