@@ -694,17 +694,14 @@
               "text": "tell me "
             },
             {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "sw"
+            },
+            {
               "entity": "ENT_ReqPaymentVal",
               "slot_name": "Fees",
               "text": "price"
-            },
-            {
-              "text": " in "
-            },
-            {
-              "entity": "ENT_Department",
-              "slot_name": "Dep",
-              "text": "scientific computing"
             },
             {
               "text": " for "

@@ -92,7 +92,7 @@ utterances:
    - what is the [Fees](Fees) for [Dep] of [year]?
    - How much are the [Fees] for the [year] of [Dep]
    - i want to know the [Fees] for the [Dep] in [year]
-   - tell me [Fees] in [Dep] for [year]
+   - tell me [Dep](sw)[Fees] for [year]
 
 
 #OfficeHours Entity
