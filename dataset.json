@@ -1,5 +1,48 @@
 {
   "entities": {
+    "ENT_Availble_SubjectsVal": {
+      "automatically_extensible": false,
+      "data": [
+        {
+          "synonyms": [
+            "courses",
+            "availble subjects",
+            "subjects"
+          ],
+          "value": "availble courses"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "ENT_CourseDescriptionVal": {
+      "automatically_extensible": false,
+      "data": [
+        {
+          "synonyms": [
+            "description",
+            "details",
+            "course"
+          ],
+          "value": "information"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "ENT_CourseName": {
+      "automatically_extensible": false,
+      "data": [
+        {
+          "synonyms": [
+            "os"
+          ],
+          "value": "operating system"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
     "ENT_Department": {
       "automatically_extensible": false,
       "data": [
@@ -69,6 +112,54 @@
       "matching_strictness": 1.0,
       "use_synonyms": true
     },
+    "ENT_DocumentVal": {
+      "automatically_extensible": false,
+      "data": [
+        {
+          "synonyms": [],
+          "value": "papers"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "ENT_ExamType": {
+      "automatically_extensible": false,
+      "data": [
+        {
+          "synonyms": [],
+          "value": "oral"
+        },
+        {
+          "synonyms": [],
+          "value": "practical"
+        },
+        {
+          "synonyms": [],
+          "value": "finals"
+        },
+        {
+          "synonyms": [],
+          "value": "midterm"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "ENT_ExamVal": {
+      "automatically_extensible": false,
+      "data": [
+        {
+          "synonyms": [
+            "examination",
+            "test"
+          ],
+          "value": "exams"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
     "ENT_GradingSchemaVal": {
       "automatically_extensible": false,
       "data": [
@@ -104,6 +195,38 @@
             "work place"
           ],
           "value": "personal office"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "ENT_PaperType": {
+      "automatically_extensible": false,
+      "data": [
+        {
+          "synonyms": [
+            "admission"
+          ],
+          "value": "submission"
+        },
+        {
+          "synonyms": [],
+          "value": "certificate of registration"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "ENT_PrerquisitesVal": {
+      "automatically_extensible": false,
+      "data": [
+        {
+          "synonyms": [
+            "available subjects",
+            "available courses",
+            "requirements"
+          ],
+          "value": "prerequesites"
         }
       ],
       "matching_strictness": 1.0,
@@ -210,14 +333,76 @@
       "matching_strictness": 1.0,
       "use_synonyms": true
     },
+    "ENT_Subjects": {
+      "automatically_extensible": false,
+      "data": [
+        {
+          "synonyms": [
+            "we",
+            "web",
+            "web eng"
+          ],
+          "value": "web engineering"
+        },
+        {
+          "synonyms": [
+            "bd"
+          ],
+          "value": "big data"
+        },
+        {
+          "synonyms": [
+            "ui",
+            "user interface"
+          ],
+          "value": "user interface design"
+        },
+        {
+          "synonyms": [
+            "components-based engineering",
+            "components"
+          ],
+          "value": "components-based programming"
+        },
+        {
+          "synonyms": [
+            "cloud"
+          ],
+          "value": "cloud computing"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "ENT_TimetableVal": {
+      "automatically_extensible": false,
+      "data": [
+        {
+          "synonyms": [
+            "schedule"
+          ],
+          "value": "timetable"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
     "ENT_Year": {
-      "automatically_extensible": true,
+      "automatically_extensible": false,
       "data": [
         {
           "synonyms": [
             "1st year",
             "year one",
-            "year 1"
+            "year 1",
+            "first semester",
+            "1st semester",
+            "semester one",
+            "semester 1",
+            "second semester",
+            "2nd semester",
+            "semester two",
+            "semester 2"
           ],
           "value": "first year"
         },
@@ -264,6 +449,156 @@
     }
   },
   "intents": {
+    "AvalCourses": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "what are the "
+            },
+            {
+              "entity": "ENT_Availble_SubjectsVal",
+              "slot_name": "AvailSubjects",
+              "text": "availble courses"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "semester 2"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "software engineering"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "computer science"
+            },
+            {
+              "text": "'s "
+            },
+            {
+              "entity": "ENT_Availble_SubjectsVal",
+              "slot_name": "AvailSubjects",
+              "text": "availble courses"
+            },
+            {
+              "text": " of "
+            },
+            {
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "second year"
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "cs"
+            },
+            {
+              "text": "'s "
+            },
+            {
+              "entity": "ENT_Availble_SubjectsVal",
+              "slot_name": "AvailSubjects",
+              "text": "courses"
+            },
+            {
+              "text": " of "
+            },
+            {
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "2nd year"
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "i want to know the "
+            },
+            {
+              "entity": "ENT_Availble_SubjectsVal",
+              "slot_name": "AvailSubjects",
+              "text": "availble subjects"
+            },
+            {
+              "text": " of "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "artificial intelligence"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "year second"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "tell me "
+            },
+            {
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "first semeter"
+            },
+            {
+              "entity": "ENT_Availble_SubjectsVal",
+              "slot_name": "AvailSubjects",
+              "text": "subjects"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "ai"
+            }
+          ]
+        }
+      ]
+    },
     "DoctorBio": {
       "utterances": [
         {
@@ -428,6 +763,145 @@
         }
       ]
     },
+    "ExamsSchedule": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "When are the "
+            },
+            {
+              "entity": "ENT_ExamType",
+              "slot_name": "type",
+              "text": "oral"
+            },
+            {
+              "entity": "ENT_ExamVal",
+              "slot_name": "Exam",
+              "text": "exams"
+            },
+            {
+              "text": " of "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "mainstream"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "year 3"
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "tell me the time for "
+            },
+            {
+              "entity": "ENT_ExamType",
+              "slot_name": "type",
+              "text": "oral"
+            },
+            {
+              "entity": "ENT_ExamVal",
+              "slot_name": "Exam",
+              "text": "examination"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "fourth year"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "scientific computing"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "i want to know the "
+            },
+            {
+              "entity": "ENT_ExamType",
+              "slot_name": "type",
+              "text": "oral"
+            },
+            {
+              "entity": "ENT_ExamVal",
+              "slot_name": "Exam",
+              "text": "test"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "sc"
+            },
+            {
+              "text": " of "
+            },
+            {
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "4th year"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "when "
+            },
+            {
+              "entity": "ENT_ExamType",
+              "slot_name": "type",
+              "text": "oral"
+            },
+            {
+              "entity": "ENT_ExamVal",
+              "slot_name": "Exam",
+              "text": "exams"
+            },
+            {
+              "text": "'s in "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "information system"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "year fourth"
+            }
+          ]
+        }
+      ]
+    },
     "GradingFormat": {
       "utterances": [
         {
@@ -507,6 +981,29 @@
               "entity": "ENT_GradingSchemaVal",
               "slot_name": "GradingSchema",
               "text": "grading schema"
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "sw"
+            },
+            {
+              "entity": "ENT_GradingSchemaVal",
+              "slot_name": "GradingSchema",
+              "text": "grading schema"
+            },
+            {
+              "text": " ?"
             }
           ]
         }
@@ -599,6 +1096,325 @@
         }
       ]
     },
+    "Papers": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "what "
+            },
+            {
+              "entity": "ENT_DocumentVal",
+              "slot_name": "paper",
+              "text": "paper"
+            },
+            {
+              "text": " needed for "
+            },
+            {
+              "entity": "ENT_PaperType",
+              "slot_name": "type",
+              "text": "submission"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what "
+            },
+            {
+              "entity": "ENT_PaperType",
+              "slot_name": "type",
+              "text": "submission"
+            },
+            {
+              "text": "'s "
+            },
+            {
+              "entity": "ENT_DocumentVal",
+              "slot_name": "paper",
+              "text": "papers"
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "how can i get a "
+            },
+            {
+              "entity": "ENT_DocumentVal",
+              "slot_name": "paper",
+              "text": "paper"
+            },
+            {
+              "text": " of "
+            },
+            {
+              "entity": "ENT_PaperType",
+              "slot_name": "type",
+              "text": "admission"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "tell me the "
+            },
+            {
+              "entity": "ENT_DocumentVal",
+              "slot_name": "paper",
+              "text": "papers"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "ENT_PaperType",
+              "slot_name": "type",
+              "text": "certificate of registration"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "i want to know "
+            },
+            {
+              "entity": "ENT_PaperType",
+              "slot_name": "type",
+              "text": "submission"
+            },
+            {
+              "text": "'s "
+            },
+            {
+              "entity": "ENT_DocumentVal",
+              "slot_name": "paper",
+              "text": "paper"
+            },
+            {
+              "text": " needed"
+            }
+          ]
+        }
+      ]
+    },
+    "Prerequisites": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "What are the "
+            },
+            {
+              "entity": "ENT_PrerquisitesVal",
+              "slot_name": "Prerequisites",
+              "text": "prerequesites"
+            },
+            {
+              "text": " of "
+            },
+            {
+              "entity": "ENT_Subjects",
+              "slot_name": "subject",
+              "text": "ui"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "software engineering"
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What "
+            },
+            {
+              "entity": "ENT_Subjects",
+              "slot_name": "subject",
+              "text": "web engineering"
+            },
+            {
+              "text": "'s "
+            },
+            {
+              "entity": "ENT_PrerquisitesVal",
+              "slot_name": "Prerequisites",
+              "text": "requirements"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "cyber security"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "tell me "
+            },
+            {
+              "entity": "ENT_Subjects",
+              "slot_name": "subject",
+              "text": "we"
+            },
+            {
+              "text": "'s "
+            },
+            {
+              "entity": "ENT_PrerquisitesVal",
+              "slot_name": "Prerequisites",
+              "text": "prerequesites"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "software engineering"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "i want to know "
+            },
+            {
+              "entity": "ENT_PrerquisitesVal",
+              "slot_name": "Prerequisites",
+              "text": "available subjects"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "ENT_Subjects",
+              "slot_name": "subject",
+              "text": "web"
+            },
+            {
+              "text": " of "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "swe"
+            }
+          ]
+        }
+      ]
+    },
+    "ReqCourseDescription": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "I want "
+            },
+            {
+              "entity": "ENT_CourseDescriptionVal",
+              "slot_name": "course",
+              "text": "information"
+            },
+            {
+              "text": " about "
+            },
+            {
+              "entity": "ENT_CourseName",
+              "slot_name": "name",
+              "text": "operating system"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is the "
+            },
+            {
+              "entity": "ENT_CourseDescriptionVal",
+              "slot_name": "course",
+              "text": "information"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "ENT_CourseName",
+              "slot_name": "name",
+              "text": "operating system"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "tell me the "
+            },
+            {
+              "entity": "ENT_CourseDescriptionVal",
+              "slot_name": "course",
+              "text": "description"
+            },
+            {
+              "text": " of "
+            },
+            {
+              "entity": "ENT_CourseName",
+              "slot_name": "name",
+              "text": "os"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what "
+            },
+            {
+              "entity": "ENT_CourseName",
+              "slot_name": "name",
+              "text": "operating system"
+            },
+            {
+              "text": "'s "
+            },
+            {
+              "entity": "ENT_CourseDescriptionVal",
+              "slot_name": "course",
+              "text": "details"
+            }
+          ]
+        }
+      ]
+    },
     "ReqPayment": {
       "utterances": [
         {
@@ -609,7 +1425,7 @@
             {
               "entity": "ENT_ReqPaymentVal",
               "slot_name": "Fees",
-              "text": "Fees"
+              "text": "fees"
             },
             {
               "text": " for "
@@ -617,7 +1433,7 @@
             {
               "entity": "ENT_Department",
               "slot_name": "Dep",
-              "text": "bio"
+              "text": "mainstream"
             },
             {
               "text": " of "
@@ -625,7 +1441,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "year 1"
+              "text": "1st semester"
             },
             {
               "text": "?"
@@ -635,7 +1451,15 @@
         {
           "data": [
             {
-              "text": "How much are the "
+              "text": "what "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "scientific computing"
+            },
+            {
+              "text": "'s "
             },
             {
               "entity": "ENT_ReqPaymentVal",
@@ -643,12 +1467,35 @@
               "text": "fees"
             },
             {
-              "text": " for the "
+              "text": " in "
             },
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "second year"
+              "text": "semester one"
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is "
+            },
+            {
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "semester 1"
+            },
+            {
+              "text": "'s "
+            },
+            {
+              "entity": "ENT_ReqPaymentVal",
+              "slot_name": "Fees",
+              "text": "money"
             },
             {
               "text": " of "
@@ -656,7 +1503,41 @@
             {
               "entity": "ENT_Department",
               "slot_name": "Dep",
-              "text": "general"
+              "text": "sc"
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "how much are the "
+            },
+            {
+              "entity": "ENT_ReqPaymentVal",
+              "slot_name": "Fees",
+              "text": "price"
+            },
+            {
+              "text": " for the "
+            },
+            {
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "second semester"
+            },
+            {
+              "text": " of "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "information system"
+            },
+            {
+              "text": " ?"
             }
           ]
         },
@@ -668,23 +1549,23 @@
             {
               "entity": "ENT_ReqPaymentVal",
               "slot_name": "Fees",
-              "text": "money"
+              "text": "payment"
             },
             {
-              "text": " for the "
+              "text": " for "
             },
             {
-              "entity": "ENT_Department",
-              "slot_name": "Dep",
-              "text": "mainstream"
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "2nd semester"
             },
             {
               "text": " in "
             },
             {
-              "entity": "ENT_Year",
-              "slot_name": "year",
-              "text": "2nd year"
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "is"
             }
           ]
         },
@@ -701,15 +1582,15 @@
             {
               "entity": "ENT_ReqPaymentVal",
               "slot_name": "Fees",
-              "text": "price"
+              "text": "tuition fees"
             },
             {
-              "text": " for "
+              "text": " in "
             },
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "year second"
+              "text": "semester two"
             }
           ]
         }
@@ -720,7 +1601,7 @@
         {
           "data": [
             {
-              "text": "When is the "
+              "text": "when the "
             },
             {
               "entity": "ENT_ResultVal",
@@ -751,6 +1632,99 @@
         {
           "data": [
             {
+              "text": "what "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "sw"
+            },
+            {
+              "text": "'s "
+            },
+            {
+              "entity": "ENT_ResultVal",
+              "slot_name": "result",
+              "text": "result"
+            },
+            {
+              "text": " time for "
+            },
+            {
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "1st year"
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "when is "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "bioinformatics"
+            },
+            {
+              "text": "'s "
+            },
+            {
+              "entity": "ENT_ResultVal",
+              "slot_name": "result",
+              "text": "result"
+            },
+            {
+              "text": " time for "
+            },
+            {
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "year one"
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is "
+            },
+            {
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "year 1"
+            },
+            {
+              "text": "'s "
+            },
+            {
+              "entity": "ENT_ResultVal",
+              "slot_name": "result",
+              "text": "result"
+            },
+            {
+              "text": " release time of "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "bio"
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
               "text": "i want to know the time of "
             },
             {
@@ -772,19 +1746,121 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "1st year"
+              "text": "first semester"
             }
           ]
         },
         {
           "data": [
             {
-              "text": "tell me the time for "
+              "text": "tell me the release time for "
             },
             {
               "entity": "ENT_ResultVal",
               "slot_name": "result",
               "text": "result"
+            },
+            {
+              "text": " of "
+            },
+            {
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "first year"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "general"
+            }
+          ]
+        }
+      ]
+    },
+    "ReqSchedule": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "What is the "
+            },
+            {
+              "entity": "ENT_TimetableVal",
+              "slot_name": "schedule",
+              "text": "schedule"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "software engineering"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "year 1"
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "sw"
+            },
+            {
+              "text": "'s "
+            },
+            {
+              "entity": "ENT_TimetableVal",
+              "slot_name": "schedule",
+              "text": "timetable"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "year 2"
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what is "
+            },
+            {
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "third year"
+            },
+            {
+              "text": "'s "
+            },
+            {
+              "entity": "ENT_TimetableVal",
+              "slot_name": "schedule",
+              "text": "schedule"
             },
             {
               "text": " in "
@@ -795,12 +1871,63 @@
               "text": "bioinformatics"
             },
             {
+              "text": " ?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "tell me "
+            },
+            {
+              "entity": "ENT_Year",
+              "slot_name": "year",
+              "text": "3rd year"
+            },
+            {
+              "text": "'s "
+            },
+            {
+              "entity": "ENT_TimetableVal",
+              "slot_name": "schedule",
+              "text": "timetable"
+            },
+            {
+              "text": " of "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "bio"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "i want to know "
+            },
+            {
+              "entity": "ENT_TimetableVal",
+              "slot_name": "schedule",
+              "text": "schedule"
+            },
+            {
+              "text": " in "
+            },
+            {
+              "entity": "ENT_Department",
+              "slot_name": "Dep",
+              "text": "general"
+            },
+            {
               "text": " of "
             },
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "year one"
+              "text": "year third"
             }
           ]
         }
