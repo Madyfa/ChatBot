@@ -175,7 +175,7 @@ class NLU:
                 chatbotques = "Please Enter "+slots_missing[i]
                 # g = Translator().translate(chatbotques , dest = self.language).text
                 # print("Chatbot: ",g)
-                print ("Chatbot : ",chatbotques)
+                print ("Chatbot : ", chatbotques)
                 if slots_missing[i] == "ID":
                     try:
                         reply = int(input("User: "))

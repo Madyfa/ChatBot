@@ -1,0 +1,105 @@
+{
+    "intents":{
+
+    "AvalCourses": [
+      "Introduction to computer, Structured Programming",
+      "Machine Learning, Big Data",
+      "you can find that in course map"
+    ],
+    "DoctorBio": [
+      "here is what i found",
+      "the biography: ",
+      "i think that's it"
+    ],
+    "DoctorOffice": [
+      "you can find the faculty's map at the loopy",
+      "i think the security men at loopy can show you",
+      "you may found it either in first or second floor"
+    ],
+    "ExamsSchedule": [
+      "your schedule: ",
+      "the schedule of exams: ",
+      "that what i found"
+    ],
+    "GradingFormat": [
+      "here is the grading schema you want",
+      "i think that's it",
+      "the grading schema: "
+    ],
+    "OfficeHours": [
+      "you can found it sunday from 12 p.m to 1 p.m",
+      "the office hours from 10 a.m to 11:30 p.m wednesday",
+      "i think from 1 p.m to 2 p.m monday"
+    ],
+    "Papers": [
+      "ask your management office",
+      "i think you have to go to student affair office",
+      "haat 6 sawar we shadet meladak :D"
+    ],
+    "Prerequisites": [
+      "Software Engineering",
+      "Database management system",
+      "you can find that in course map"
+    ],
+    "ReqCourseDescription": [
+      "here is what i found",
+      "the description: ",
+      "i think that's it"
+    ],
+    "ReqPayment": [
+      "the fees is 20000 EGP",
+      "18000 EGP",
+      "you can find the exact number at the management office"
+    ],
+    "ReqResultTime": [
+      "it will be available in july",
+      "i think it will appear in february",
+      "i think it depends on the management office so they know better"
+    ],
+    "ReqSchedule": [
+      "your schedule: ",
+      "the schedule of this semester: ",
+      "that what i found"
+    ]
+    },
+
+    "entities": {
+
+    "ENT_CourseName": [
+      "tell the name of the course",
+      "i want course's name please",
+      "can i know the name of the course please"
+    ],
+    "ENT_Department": [
+      "what is your department",
+      "tell me your department please",
+      "you have to enter your department please"
+    ],
+    "ENT_ExamType": [
+      "what is the exam type ?",
+      "give me the exam kind you want",
+      "could you tell me the exam type please"
+    ],
+    "ENT_PaperType": [
+      "what is the papers' type",
+      "tell me the type of the papers you ask for",
+      "i need the what kind of papers you ask for"
+    ],
+    "ENT_Semester": [
+      "tell me the semester number please",
+      "what is the semester number",
+      "i need to know the semester number"
+    ],
+    "ENT_Subjects": [],
+    "ENT_Year": [
+      "tell me your year",
+      "i want the year number please",
+      "what is the year please ?"
+    ],
+    "ENT_doctor_name": [
+      "tell me the person's name",
+      "you need to tell me the name please",
+      "what is the person's name please"
+    ]
+    }
+}
