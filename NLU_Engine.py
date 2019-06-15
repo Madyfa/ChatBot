@@ -13,6 +13,7 @@ from DB_Interaction import interaction
 class NLU:
     __connection = Database()
     __interaction = interaction()
+    # Default answer 
     __answers = {
             "NA": "Please Ask your department administrator for this"
         }
@@ -24,7 +25,8 @@ class NLU:
     #     print("Origin Text : " + translated.origin)
     #     print("Translated Text : " + translated.text)
     #     return translated.text
-
+    
+    #     Initializing member variables
     def __int__(self):
         self._query = ''
         self.__result = ''
@@ -64,19 +66,20 @@ class NLU:
             self.__engine = SnipsNLUEngine.from_path("Z:\FCIS-ASU\Semester 8\ChatbotModel")
 
 
-
+    # Set the query variable with user message
     def setQuery(self, query):
         # self._query , self.language = query
         self._query = query
         self.__excute()
 
 
-
+    # Parses the user message based on the dataset
     def __excute(self):
         parsing = self.__engine.parse(self._query)
         self.__result = json.loads(json.dumps(parsing,indent=2))
         print( self.__result )
-
+    
+    # After processing the user message it's matched against the dataset to find the intention of the user
     def _getIntent(self):
         try:
             self._intent = self.__result['intent']['intentName']
@@ -84,12 +87,12 @@ class NLU:
         except Exception as e:
             return 'None'
 
-
+    # Gets a probability of the user's intent being the correct one
     def _getProbability(self):
         self._probability = self.__result['intent']['probability']
         return self._probability
 
-    #need Handling Exception
+     # Checks the entites corresponding to the user's intent
     def _getSlots(self):
         dic = {}
         if len(self.__result['slots']) != 0:
@@ -105,7 +108,7 @@ class NLU:
         self._slots = dic
         return self._slots
 
-
+    # Adds unanswered questions to the database in order to be added later to the dataset
     def checkIntent(self):
         if self._getIntent() == 'None':
             self.__interaction.UnAnsweredFactory().__noIntent_insert__(self._query)
@@ -130,6 +133,7 @@ class NLU:
         else:
             print('ChatBot : not available due to intent')
 
+    # Uses the user's intent to check for entites available and missing in the message
     def checkSlots(self):
         self.__nluSlots = self._getSlots()
         if str(self.__nluSlots).__contains__("No Slots") :
@@ -159,7 +163,7 @@ class NLU:
         print("Slots Not Available in Question : ", ret)  # el mafroud btalla3 el slots ely mesh mwgooda
         return ret
 
-
+    # Asks the user to enter the missing slots in the message to complete his query
     def askForunenteredEntities(self):
         slots_needed = self._getSlots()
         # print(slots_needed)
@@ -205,7 +209,8 @@ class NLU:
                         loopflagi = True
                         break
         return self.__nluSlots
-
+    
+    # Displays the default answer for questions without responses yet
     def return_original(self):
         slots_needed = self.askForunenteredEntities()
         if slots_needed is None:
