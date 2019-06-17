@@ -22,7 +22,7 @@ import pyodbc as db
 if __name__ == "__main__":
     print("Connecting to Database...")
 
-    # dbconn = db.connect("Driver={SQL SERVER};Server=.;Database=CBT;Trusted_Connection=yes;")
+    #dbconn = db.connect("Driver={SQL SERVER};Server=.;Database=CBT;Trusted_Connection=yes;")
     dbconn = db.connect("Driver={ODBC Driver 13 for SQL Server};Server=tcp:madyfa.database.windows.net,1433;Database=CBT;Uid=mohamed@madyfa;Pwd={3Oss199755};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;")
     cursor = dbconn.cursor()
     flag = 1

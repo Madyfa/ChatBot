@@ -461,3 +461,65 @@ class UnAnswered:
         # DB().DBdisself.connect()
 
 
+
+class Answer:
+    def __init__(self, dbconn,cursor):
+        self.conn = dbconn
+        self.cursor = cursor
+
+    def GetAnswer(self , command):
+            # self.conn , cursor = DB().DBconnect()
+            # command = """
+            # Select ID From CBT_LKP_Intent Where Name = '{0}'
+            # """.format(Name)
+            try:
+                tpl = []
+                self.cursor.execute(command)
+                for row in self.cursor:
+                    tpl.append(row)
+            except Exception as e:
+                print("Error ", e)
+            # DB().DBdisconnect()
+            return tpl
+
+    def __noIntent_insert__( self , Q ):
+        # self.conn , self.cursor = DB().DBself.connect()
+        command = """
+                  EXEC CBT_NoIntent_INS @Question=?
+                  """
+        arg = Q
+        try:
+            self.cursor.execute(command, arg)
+            print("Inserted Successfully")
+            self.conn.commit()
+        except Exception as e:
+            print("Error ", e)
+        # DB().DBdisself.connect()
+
+    def __noIntent_update__(self, _id , Q):
+        # self.conn , self.cursor = DB().DBself.connect()
+        command = """
+                          EXEC CBT_NoIntent_UPD @ID=?, @Question=?
+                          """
+        arg = (_id, Q)
+        try:
+            self.cursor.execute(command, arg)
+            print("Updated Successfully")
+            self.conn.commit()
+        except Exception as e:
+            print("Error ", e)
+        # DB().DBdisself.connect()
+
+    def __noIntent_delete__(self, _id):
+        # self.conn , self.cursor = DB().DBself.connect()
+        command = """
+                             EXEC CBT_NoIntent_DEL @ID=?
+                             """
+        arg = _id
+        try:
+            self.cursor.execute(command, arg)
+            print("Deleted Successfully")
+            self.self.conn.commit()
+        except Exception as e:
+            print("Error ", e)
+        # DB().DBdisself.connect()

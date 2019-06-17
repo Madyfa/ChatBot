@@ -1,10 +1,20 @@
-from Interactions import lowProb , slots , feedback , logs , UnAnswered ,intent
+from Interactions import lowProb , slots , feedback , logs , UnAnswered ,intent ,Answer
 
 class interaction():
 
     def __init__(self, dbconn,cursor):
         self.conn = dbconn
         self.cursor = cursor
+
+    def DatabaseFactory(self,tablename):
+        if tablename =="feedback":
+            return feedback(self.conn,self.cursor)
+        elif tablename =="logs":
+            return logs(self.conn,self.cursor)
+        elif tablename =="unanswered":
+            return UnAnswered(self.conn,self.cursor)
+        elif tablename =="answer":
+            return Answer(self.conn,self.cursor)
 
     def LogFactory(self):
 

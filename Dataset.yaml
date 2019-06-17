@@ -351,10 +351,10 @@ type: entity
 name: ENT_Year
 automatically_extensible: no
 values:
-- [first year, 1st year, year one, year 1, 1 , 1st ,first , one ]
-- [second year , 2nd year , year second , year 2 , 2 , 2nd ,second , two]
-- [third year , 3rd year , year third , year 3 , 3 , 3rd  , third]
-- [fourth year , 4th year , year fourth , year 4 , senior, final year , 4 , 4th ,four , fourth]
+- [first year, 1st year, year one, year 1]
+- [second year , 2nd year , year second , year 2]
+- [third year , 3rd year , year third , year 3]
+- [fourth year , 4th year , year fourth , year 4 , senior, final year]
 
 # Time entity
 ---

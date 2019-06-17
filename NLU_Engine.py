@@ -134,6 +134,7 @@ class NLU:
 
         if self.checkIntent():
             if str(self.CheckJsonEntities()).__contains__("Has No Entities"):
+                print("Chatbot : ",random.choice(self.response['intents'][self._getIntent()]))
                 print("Chatbot : Get Answer From Json Answers")
             elif str(self.CheckJsonEntities()).__contains__("Has No Intent"):
                  self.logs += ("[ "+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")+" ] "+" ChatBot : Not Available due to SmallTalk intent" +"\n")
@@ -170,7 +171,7 @@ class NLU:
                     break
             if not found:
                 ret.append(datasetSlots[i])
-        print("Slots Not Available in Question : ", ret)  # el mafroud btalla3 el slots ely mesh mwgooda
+        # print("Slots Not Available in Question : ", ret)  # el mafroud btalla3 el slots ely mesh mwgooda
         return ret
 
 
@@ -297,9 +298,19 @@ class NLU:
                  command +=key+" = '"+value.lower()+"'"
                  flag=False
             else:
-                 command +=" , "+key + " = '"+value.lower()+"'"
-        self.logs += ("[ "+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")+" ] "+" Chatbot : "+ str(random.choice(self.response['intents'][str(self._getIntent())])) + "\n")
-        print(random.choice(self.response['intents'][str(self._getIntent())]) +command)
+                 command +=" and "+key + " = '"+value.lower()+"'"
+        # print(random.choice(self.response['intents'][str(self._getIntent())]) +command)
+        try:
+            answe = self.__interaction.DatabaseFactory("answer").GetAnswer(command)
+            if answe == '':
+                 self.logs += ("[ "+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")+" ] "+" Chatbot : Sorry I don't have this answer " + "\n")
+                 print("Sorry I don't have this answer ")
+            else:
+                self.logs += ("[ "+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")+" ] "+" Chatbot : "+ random.choice(self.response['intents'][str(self._getIntent())]) + answe[0][0] + "\n")
+                print("Chatbot : ",random.choice(self.response['intents'][str(self._getIntent())]) + answe[0][0])
+        except :
+            self.logs += ("[ "+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")+" ] "+" Chatbot : Sorry I dont have this answer")
+            print("Sorry I don't have this answer ")
 
     def CheckJsonEntities(self):
          for i in range(len(self.__dataset['intents'][self._getIntent()]['utterances'])):

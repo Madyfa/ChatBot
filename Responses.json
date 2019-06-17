@@ -1,6 +1,28 @@
 {
     "intents":{
-
+     "Hello": [
+        "Hi there, friend!",
+        "Hi!",
+        "Hey!",
+        "Hey there!",
+        "Good day!",
+        "Hello!",
+        "Greetings!"
+    ],
+      "Bye" : [
+            "See you soon!",
+            "Bye-bye!",
+            "Till next time!",
+            "Bye."
+      ],
+      "Thanks": [
+         "Anytime. That is what I am here for.",
+         "It is my pleasure to help."
+      ],
+      "Hungry": [
+        "Hungry for knowledge.",
+        "I just had a byte. Ha ha. Get it? b-y-t-e."
+      ],
     "AvalCourses": [
       "Introduction to computer, Structured Programming",
       "Machine Learning, Big Data",

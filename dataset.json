@@ -414,11 +414,7 @@
           "synonyms": [
             "1st year",
             "year one",
-            "year 1",
-            1,
-            "1st",
-            "first",
-            "one"
+            "year 1"
           ],
           "value": "first year"
         },
@@ -426,11 +422,7 @@
           "synonyms": [
             "2nd year",
             "year second",
-            "year 2",
-            2,
-            "2nd",
-            "second",
-            "two"
+            "year 2"
           ],
           "value": "second year"
         },
@@ -438,10 +430,7 @@
           "synonyms": [
             "3rd year",
             "year third",
-            "year 3",
-            3,
-            "3rd",
-            "third"
+            "year 3"
           ],
           "value": "third year"
         },
@@ -451,11 +440,7 @@
             "year fourth",
             "year 4",
             "senior",
-            "final year",
-            4,
-            "4th",
-            "four",
-            "fourth"
+            "final year"
           ],
           "value": "fourth year"
         }
@@ -494,7 +479,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "year 2"
+              "text": "year 3"
             },
             {
               "text": " in "
@@ -533,7 +518,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": 2
+              "text": "fourth year"
             },
             {
               "text": " ?"
@@ -564,7 +549,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "2nd"
+              "text": "4th year"
             },
             {
               "text": " ?"
@@ -595,7 +580,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "second"
+              "text": "year fourth"
             }
           ]
         },
@@ -870,7 +855,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "year 3"
+              "text": "first year"
             },
             {
               "text": " ?"
@@ -898,7 +883,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": 3
+              "text": "1st year"
             },
             {
               "text": " in "
@@ -939,7 +924,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "3rd"
+              "text": "year one"
             }
           ]
         },
@@ -972,7 +957,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "third"
+              "text": "year 1"
             }
           ]
         }
@@ -1655,7 +1640,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "1st"
+              "text": "2nd year"
             },
             {
               "text": "?"
@@ -1686,7 +1671,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "first"
+              "text": "year second"
             },
             {
               "text": " ?"
@@ -1701,7 +1686,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "one"
+              "text": "year 2"
             },
             {
               "text": "'s "
@@ -1740,7 +1725,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "second year"
+              "text": "third year"
             },
             {
               "text": " of "
@@ -1771,7 +1756,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "2nd year"
+              "text": "3rd year"
             },
             {
               "text": " in "
@@ -1804,7 +1789,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "year second"
+              "text": "year third"
             }
           ]
         }
@@ -1960,7 +1945,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": 1
+              "text": "second year"
             }
           ]
         },
@@ -2051,7 +2036,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "two"
+              "text": "year 4"
             },
             {
               "text": " ?"
@@ -2066,7 +2051,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "third year"
+              "text": "senior"
             },
             {
               "text": "'s "
@@ -2097,7 +2082,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "3rd year"
+              "text": "final year"
             },
             {
               "text": "'s "
@@ -2141,7 +2126,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "year third"
+              "text": "first semeter"
             }
           ]
         }
