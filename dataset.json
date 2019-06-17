@@ -104,7 +104,10 @@
           "synonyms": [
             "profile",
             "life story",
-            "life history"
+            "life history",
+            "doctor",
+            "dr.",
+            "dr"
           ],
           "value": "biography"
         }
@@ -116,7 +119,11 @@
       "automatically_extensible": false,
       "data": [
         {
-          "synonyms": [],
+          "synonyms": [
+            "paperworks",
+            "paper",
+            "paperwork"
+          ],
           "value": "papers"
         }
       ],
@@ -155,6 +162,19 @@
             "test"
           ],
           "value": "exams"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "ENT_FeedbackVal": {
+      "automatically_extensible": false,
+      "data": [
+        {
+          "synonyms": [
+            "rank"
+          ],
+          "value": "feedback"
         }
       ],
       "matching_strictness": 1.0,
@@ -395,14 +415,10 @@
             "1st year",
             "year one",
             "year 1",
-            "first semester",
-            "1st semester",
-            "semester one",
-            "semester 1",
-            "second semester",
-            "2nd semester",
-            "semester two",
-            "semester 2"
+            1,
+            "1st",
+            "first",
+            "one"
           ],
           "value": "first year"
         },
@@ -410,7 +426,11 @@
           "synonyms": [
             "2nd year",
             "year second",
-            "year 2"
+            "year 2",
+            2,
+            "2nd",
+            "second",
+            "two"
           ],
           "value": "second year"
         },
@@ -418,7 +438,10 @@
           "synonyms": [
             "3rd year",
             "year third",
-            "year 3"
+            "year 3",
+            3,
+            "3rd",
+            "third"
           ],
           "value": "third year"
         },
@@ -428,7 +451,11 @@
             "year fourth",
             "year 4",
             "senior",
-            "final year"
+            "final year",
+            4,
+            "4th",
+            "four",
+            "fourth"
           ],
           "value": "fourth year"
         }
@@ -467,7 +494,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "semester 2"
+              "text": "year 2"
             },
             {
               "text": " in "
@@ -506,7 +533,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "second year"
+              "text": 2
             },
             {
               "text": " ?"
@@ -537,7 +564,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "2nd year"
+              "text": "2nd"
             },
             {
               "text": " ?"
@@ -568,7 +595,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "year second"
+              "text": "second"
             }
           ]
         },
@@ -599,12 +626,51 @@
         }
       ]
     },
+    "Bye": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "must go"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "see you soon"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "bye"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "goodbye"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "goodnight"
+            }
+          ]
+        }
+      ]
+    },
     "DoctorBio": {
       "utterances": [
         {
           "data": [
             {
-              "text": "What is the "
+              "text": "what is the "
             },
             {
               "entity": "ENT_DoctorBioVal",
@@ -627,7 +693,12 @@
         {
           "data": [
             {
-              "text": "Who is "
+              "text": "who is "
+            },
+            {
+              "entity": "ENT_DoctorBioVal",
+              "slot_name": "Doctorbio",
+              "text": "dr"
             },
             {
               "entity": "ENT_doctor_name",
@@ -642,7 +713,12 @@
         {
           "data": [
             {
-              "text": "Tell me more about "
+              "text": "tell me more about "
+            },
+            {
+              "entity": "ENT_DoctorBioVal",
+              "slot_name": "Doctorbio",
+              "text": "dr"
             },
             {
               "entity": "ENT_doctor_name",
@@ -654,7 +730,7 @@
         {
           "data": [
             {
-              "text": "i want to know "
+              "text": "i want to know a "
             },
             {
               "entity": "ENT_DoctorBioVal",
@@ -662,7 +738,7 @@
               "text": "biography"
             },
             {
-              "text": " of "
+              "text": " for "
             },
             {
               "entity": "ENT_doctor_name",
@@ -678,20 +754,20 @@
         {
           "data": [
             {
-              "text": "where is "
-            },
-            {
-              "entity": "ENT_doctor_name",
-              "slot_name": "doc",
-              "text": "safwat hamad"
-            },
-            {
-              "text": " 's "
+              "text": "where is the "
             },
             {
               "entity": "ENT_OfficeVal",
               "slot_name": "office",
               "text": "personal office"
+            },
+            {
+              "text": " for "
+            },
+            {
+              "entity": "ENT_doctor_name",
+              "slot_name": "doc",
+              "text": "safwat hamad"
             },
             {
               "text": " ?"
@@ -724,20 +800,20 @@
         {
           "data": [
             {
-              "text": "tell me the way to "
-            },
-            {
-              "entity": "ENT_doctor_name",
-              "slot_name": "doc",
-              "text": "safwat hamad"
-            },
-            {
-              "text": "'s "
+              "text": "tell me the way of "
             },
             {
               "entity": "ENT_OfficeVal",
               "slot_name": "office",
               "text": "office"
+            },
+            {
+              "text": " to "
+            },
+            {
+              "entity": "ENT_doctor_name",
+              "slot_name": "doc",
+              "text": "safwat hamad"
             }
           ]
         },
@@ -822,7 +898,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "fourth year"
+              "text": 3
             },
             {
               "text": " in "
@@ -863,7 +939,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "4th year"
+              "text": "3rd"
             }
           ]
         },
@@ -896,7 +972,68 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "year fourth"
+              "text": "third"
+            }
+          ]
+        }
+      ]
+    },
+    "Feedback": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "i want to write a "
+            },
+            {
+              "entity": "ENT_FeedbackVal",
+              "slot_name": "fb",
+              "text": "feedback"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "open "
+            },
+            {
+              "entity": "ENT_FeedbackVal",
+              "slot_name": "fb",
+              "text": "rank"
+            },
+            {
+              "text": " page"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "i would like to "
+            },
+            {
+              "entity": "ENT_FeedbackVal",
+              "slot_name": "fb",
+              "text": "feedback"
+            },
+            {
+              "text": " the bot"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "can i open the "
+            },
+            {
+              "entity": "ENT_FeedbackVal",
+              "slot_name": "fb",
+              "text": "rank"
+            },
+            {
+              "text": " and add meesage to the bot"
             }
           ]
         }
@@ -1009,12 +1146,69 @@
         }
       ]
     },
+    "Hello": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "hello"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "hi"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "afternoon"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "morning"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "hey there"
+            }
+          ]
+        }
+      ]
+    },
+    "Hungry": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "hungry"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "eat"
+            }
+          ]
+        }
+      ]
+    },
     "OfficeHours": {
       "utterances": [
         {
           "data": [
             {
-              "text": "what are the "
+              "text": "what are "
             },
             {
               "entity": "ENT_OfficeHoursVal",
@@ -1065,6 +1259,9 @@
               "text": "safwat hamad"
             },
             {
+              "text": "'s "
+            },
+            {
               "entity": "ENT_OfficeHoursVal",
               "slot_name": "officehours",
               "text": "available"
@@ -1077,7 +1274,7 @@
         {
           "data": [
             {
-              "text": "tell me the "
+              "text": "tell me "
             },
             {
               "entity": "ENT_OfficeHoursVal",
@@ -1085,7 +1282,7 @@
               "text": "free"
             },
             {
-              "text": " of "
+              "text": " for "
             },
             {
               "entity": "ENT_doctor_name",
@@ -1106,7 +1303,7 @@
             {
               "entity": "ENT_DocumentVal",
               "slot_name": "paper",
-              "text": "paper"
+              "text": "papers"
             },
             {
               "text": " needed for "
@@ -1152,7 +1349,7 @@
             {
               "entity": "ENT_DocumentVal",
               "slot_name": "paper",
-              "text": "paper"
+              "text": "paperworks"
             },
             {
               "text": " of "
@@ -1175,7 +1372,7 @@
             {
               "entity": "ENT_DocumentVal",
               "slot_name": "paper",
-              "text": "papers"
+              "text": "paper"
             },
             {
               "text": " in "
@@ -1203,7 +1400,7 @@
             {
               "entity": "ENT_DocumentVal",
               "slot_name": "paper",
-              "text": "paper"
+              "text": "paperwork"
             },
             {
               "text": " needed"
@@ -1412,6 +1609,23 @@
               "text": "details"
             }
           ]
+        },
+        {
+          "data": [
+            {
+              "text": "can i know more about "
+            },
+            {
+              "entity": "ENT_CourseName",
+              "slot_name": "name",
+              "text": "os"
+            },
+            {
+              "entity": "ENT_CourseDescriptionVal",
+              "slot_name": "course",
+              "text": "course"
+            }
+          ]
         }
       ]
     },
@@ -1441,7 +1655,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "1st semester"
+              "text": "1st"
             },
             {
               "text": "?"
@@ -1472,7 +1686,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "semester one"
+              "text": "first"
             },
             {
               "text": " ?"
@@ -1487,7 +1701,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "semester 1"
+              "text": "one"
             },
             {
               "text": "'s "
@@ -1526,7 +1740,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "second semester"
+              "text": "second year"
             },
             {
               "text": " of "
@@ -1557,7 +1771,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "2nd semester"
+              "text": "2nd year"
             },
             {
               "text": " in "
@@ -1590,7 +1804,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "semester two"
+              "text": "year second"
             }
           ]
         }
@@ -1746,7 +1960,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "first semester"
+              "text": 1
             }
           ]
         },
@@ -1837,7 +2051,7 @@
             {
               "entity": "ENT_Year",
               "slot_name": "year",
-              "text": "year 2"
+              "text": "two"
             },
             {
               "text": " ?"
@@ -1928,6 +2142,45 @@
               "entity": "ENT_Year",
               "slot_name": "year",
               "text": "year third"
+            }
+          ]
+        }
+      ]
+    },
+    "Thanks": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "thank you"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "thanks for your help"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "cheers"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "amazing"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "nice work"
             }
           ]
         }

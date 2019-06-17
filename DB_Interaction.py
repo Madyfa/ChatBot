@@ -2,25 +2,29 @@ from Interactions import lowProb , slots , feedback , logs , UnAnswered ,intent
 
 class interaction():
 
+    def __init__(self, dbconn,cursor):
+        self.conn = dbconn
+        self.cursor = cursor
 
     def LogFactory(self):
-       return logs()
+
+       return logs(self.conn,self.cursor)
 
 
     def FeedbackFactory(self):
-       return feedback()
+       return feedback(self.conn,self.cursor)
 
     def LowProbFactory(self):
-       return lowProb()
+       return lowProb(self.conn,self.cursor)
 
     def UnAnsweredFactory(self):
-        return UnAnswered()
+        return UnAnswered(self.conn,self.cursor)
 
     def IntentFactory(self):
-        return intent()
+        return intent(self.conn,self.cursor)
 
     def SlotFactory(self):
-        return slots()
+        return slots(self.conn,self.cursor)
 
 
 #interaction().SlotFactory().SaveSlot('CourseName')

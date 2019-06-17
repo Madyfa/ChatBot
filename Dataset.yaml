@@ -8,10 +8,10 @@ slots:
    - name: doc
      entity: ENT_doctor_name
 utterances:
-   - What is the [Doctorbio](biography) of [doc](safwat hamad) ?
-   - Who is [doc] ?
-   - Tell me more about [doc]
-   - i want to know [Doctorbio] of [doc]
+   - what is the [Doctorbio](biography) of [doc](safwat hamad) ?
+   - who is [Doctorbio](dr)[doc] ?
+   - tell me more about [Doctorbio](dr) [doc]
+   - i want to know a [Doctorbio] for [doc]
 
 # Grading Schema Intent
 ---
@@ -39,9 +39,9 @@ slots:
    - name: doc
      entity: ENT_doctor_name
 utterances:
-   - where is [doc](safwat hamad) 's [office](personal office) ?
+   - where is the [office](personal office) for [doc] ?
    - how to go to [doc] 's [office] ?
-   - tell me the way to [doc]'s [office]
+   - tell me the way of [office] to [doc]
    - i want to know the place of [doc]'s [office]
 
 
@@ -55,10 +55,10 @@ slots:
    - name: doc
      entity: ENT_doctor_name
 utterances:
-   - what are the [officehours](office hours) of [doc](safwat hamad)?
+   - what are [officehours](office hours) of [doc](safwat hamad)?
    - i want to know the [officehours] of [doc]
-   - when is [doc](safwat hamad) [officehours] ?
-   - tell me the [officehours] of [doc]
+   - when is [doc](safwat hamad)'s [officehours] ?
+   - tell me [officehours] for [doc]
 
 # ReqResultTime Intent
 ---
@@ -168,7 +168,7 @@ slots:
  - name: type
    entity: ENT_PaperType
 utterances:
-- what [paper](paper) needed for [type](submission)?
+- what [paper](papers) needed for [type](submission)?
 - what [type]'s [paper] ?
 - how can i get a [paper] of [type]?
 - tell me the [paper] in [type]
@@ -189,6 +189,7 @@ utterances:
   - what is the [course] for [name]
   - tell me the [course] of [name]
   - what [name]'s [course]
+  - can i know more about [name](os)[course]
 
 
 # ExamsSchedule intent
@@ -209,6 +210,28 @@ utterances:
     - tell me the time for [type](oral) [Exam] for [year] in [Dep]
     - i want to know the [type](oral) [Exam] for [Dep] of [year]
     - when [type](oral) [Exam]'s in [Dep] for [year]
+
+# FeedBack
+---
+type: intent
+name: Feedback
+slots:
+   - name: fb
+     entity: ENT_FeedbackVal
+utterances:
+  - i want to write a [fb]
+  - open [fb] page
+  - i would like to [fb] the bot
+  - can i open the [fb] and add meesage to the bot
+
+#Feedback entity
+---
+type: entity
+name: ENT_FeedbackVal
+automatically_extensible: no
+values:
+    - [feedback , rank]
+
 
 
 #Exam entity
@@ -267,7 +290,7 @@ type: entity
 name : ENT_DocumentVal
 automatically_extensible: no
 values:
-- [papers]
+- [papers ,paperworks ,paper , paperwork]
 
 # TimetableVal entity
 ---
@@ -312,7 +335,7 @@ type: entity
 name: ENT_DoctorBioVal
 automatically_extensible: no
 values:
-- [biography,profile,life story,life history]
+- [biography,profile,life story,life history ,doctor , dr. ,dr]
 
 #ReqPaymentVal entity
 ---
@@ -328,10 +351,10 @@ type: entity
 name: ENT_Year
 automatically_extensible: no
 values:
-- [first year, 1st year, year one, year 1, first semester, 1st semester , semester one, semester 1,second semester, 2nd semester , semester two, semester 2]
-- [second year , 2nd year , year second , year 2]
-- [third year , 3rd year , year third , year 3]
-- [fourth year , 4th year , year fourth , year 4 , senior, final year]
+- [first year, 1st year, year one, year 1, 1 , 1st ,first , one ]
+- [second year , 2nd year , year second , year 2 , 2 , 2nd ,second , two]
+- [third year , 3rd year , year third , year 3 , 3 , 3rd  , third]
+- [fourth year , 4th year , year fourth , year 4 , senior, final year , 4 , 4th ,four , fourth]
 
 # Time entity
 ---
@@ -370,7 +393,7 @@ type: entity
 name: ENT_OfficeHoursVal
 automatically_extensible: no
 values:
-- [office hours, available, free]
+- [office hours, available, free ]
 
 #Office Entity
 ---
@@ -402,3 +425,47 @@ values:
 - [computer science, cs]
 - [artificial intelligence, ai]
 - cyber security
+
+
+---
+type: intent
+name: Hello
+utterances:
+  - hello
+  - hi
+  - afternoon
+  - morning
+  - hey there
+
+
+
+---
+type: intent
+name: Bye
+utterances:
+  - must go
+  - see you soon
+  - bye
+  - goodbye
+  - goodnight
+
+
+
+---
+type: intent
+name: Hungry
+utterances:
+  - hungry
+  - eat
+
+
+---
+type: intent
+name: Thanks
+utterances:
+  - thank you
+  - thanks for your help
+  - cheers
+  - amazing
+  - nice work
+
